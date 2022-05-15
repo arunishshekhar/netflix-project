@@ -42,10 +42,6 @@ function LoginPage() {
           </form>
         </div>
       </div>
-      <div className="features">
-
-        
-      </div>
     </div>
   );
 }

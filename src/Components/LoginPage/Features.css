@@ -1,0 +1,41 @@
+.features {
+    display:flex;
+    flex-direction:column;
+    background: rgb(0, 0, 0);
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 0,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+    color:white
+}
+
+.feature {
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    /* align-items: center; */
+    border-bottom: 8px solid #222;
+    position: relative;
+
+
+}
+
+.feature video,img{
+    /* position: fixed; */
+  /* z-index: 0; */
+}
+
+.gif-container-feature1 {
+
+    background: url('/public/Images/tv1.png') center no-repeat;
+}
+
+.gif-container-feature2 {
+    background: url('/public/Images/mobile-stranger-T.jpg');
+}
+
+.gif-container-feature3 {
+    background: url('/public/Images/tv2.png');
+}
