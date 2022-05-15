@@ -14,7 +14,7 @@ function Features() {
           </h2>
         </div>
         <div className="gif-container-feature1">
-          <video src="/Images/firstAnim.m4v" autoplay></video>
+          <video src="/Images/firstAnim.m4v" autoplay loop playsInline></video>
         </div>
       </div>
       <div className="feature two">
@@ -37,7 +37,7 @@ function Features() {
           </h2>
         </div>
         <div className="gif-container-feature3">
-          <video src="/Images/video-devices-2.m4v" autoplay></video>
+          <video src="/Images/video-devices-2.m4v" autoplay loop playsInline></video>
         </div>
       </div>
       <div className="feature four">

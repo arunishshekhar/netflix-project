@@ -1,0 +1,42 @@
+
+.footer{
+    background:black;
+    color: #757575;
+    text-align: left;
+    padding:1rem;
+    display:flex;
+    flex-direction: column;
+    /* justify-content:space-evenly; */
+    
+}
+.footer a{
+    text-decoration: none;
+    color: #757575;
+
+}
+.footer a:hover{
+    text-decoration:underline;
+    color: #757575;
+
+}
+
+.footer-nav{
+    display:flex;
+    justify-content:space-evenly;
+    font-size:13px;
+}
+
+.footer-top{
+    margin: 0 0 15px;
+
+}
+
+.sub-footer-nav{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sub-footer-nav li{
+    padding: .5rem 0;
+}
