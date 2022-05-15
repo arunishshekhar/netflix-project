@@ -10,26 +10,41 @@ function LoginPage() {
       </div>
       <div className="login-Img-Bg">
         <div className="main-content-centre">
-
-          <h1>Unlimited movies, TV shows and more.</h1>
+          <h1 className="main-body-title">
+            Unlimited movies, TV shows and more.
+          </h1>
           <h2>Watch anywhere. Cancel anytime.</h2>
-          <form>
-            <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+          <form className="signup-form">
+            <h3>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </h3>
             <div className="form-input-submit">
-              <ul className="input-field-err">
-                <li>
-                  <div className="input-column">
-                  <label htmlFor="input-email" >Email address</label>
-                  <input type="email" id="input-email" value=''/>
-                  </div>
-                </li>
-                <li>{}</li>
-              </ul>
-              <button className="submit-email-btn">{`Get Started >`}</button>
+              <div className="input-field-err">
+                <ul className="input-column">
+                  <li>
+                    {" "}
+                    <label htmlFor="input-email">Email address</label>
+                  </li>
+                  <li>
+                    <input
+                      type="email"
+                      id="input-email"
+                      value=""
+                      placeholder="Email address "
+                    />
+                  </li>
+                </ul>
+              </div>
+              <button className="submit-email-btn">{`Get Started  >`}</button>
             </div>
+            <h5 className="input-err">{"Email is required"}</h5>
           </form>
         </div>
+      </div>
+      <div className="features">
 
+        
       </div>
     </div>
   );
