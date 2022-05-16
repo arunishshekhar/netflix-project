@@ -1,12 +1,13 @@
 import React from "react";
 import "./HeaderPage.css";
+import { Link } from "react-router-dom";
 
 function HeaderPage() {
   return (
     <div className="loginPage">
       <div className="loginPage_bg">
         <img className="logo" src="/Images/logo.svg" alt="logo" />
-        <button className="login-sigin-btn">Sign In</button>
+        <Link to="/login"><button className="login-sigin-btn">Sign In</button></Link>
       </div>
       <div className="login-Img-Bg">
         <div className="main-content-centre">
