@@ -21,7 +21,7 @@ vote_count: 1347
 function IndivisualContent (props) {
     return (
         <section>
-            <img src={`https://image.tmdb.org/t/p/w500${(props.para.backdrop_path) ? props.para.backdrop_path : props.para.poster_path}`}/>
+            <img src={`https://image.tmdb.org/t/p/w300${(props.para.backdrop_path) ? props.para.backdrop_path : props.para.poster_path}`}/>
             <p>{(props.para.title) ? props.para.title : props.para.name}</p>
         </section>
     )
