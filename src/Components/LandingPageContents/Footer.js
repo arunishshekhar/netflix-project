@@ -30,7 +30,7 @@ function Footer() {
         <li><a href="">Only on Netflix</a></li>
       </ul>
       </div>
-      <h5>Netflix India</h5>
+      <h5 className="footer-end">Netflix India</h5>
     </div>
   )
 }
