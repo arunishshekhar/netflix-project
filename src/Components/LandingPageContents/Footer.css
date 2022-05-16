@@ -1,5 +1,7 @@
 
 .footer{
+    border-top: 8px solid #222;
+
     background:black;
     color: #757575;
     text-align: left;
