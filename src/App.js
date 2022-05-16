@@ -9,10 +9,14 @@ function App() {
     <div className="App">
       <Router>
         {!user ? (
-          <LandingPage />
+          <Switch>
+         <Route exact path="/"> <LandingPage /></Route>
+         <Route exact path="/login"><Home></Home></Route>
+          
+          </Switch>
         ) : (
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/browse">
               <Home />
             </Route>
           </Switch>
