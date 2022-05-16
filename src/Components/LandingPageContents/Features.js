@@ -1,6 +1,6 @@
 import React from "react";
 
-import './Features.css'
+import "./Features.css";
 
 function Features() {
   return (
@@ -13,8 +13,14 @@ function Features() {
             players and more.
           </h2>
         </div>
-        <div className="gif-container-feature1">
-          <video src="/Images/firstAnim.m4v" autoplay loop playsInline></video>
+        <div className="animation-card">
+          
+          <img src="/Images/tv1.png" className="anim-img" alt="TV"/>
+          <div className="gif-container feature1">
+          <video autoplay loop playsInline>
+          <source src="/Images/firstAnim.m4v" type="video/mp4"/>
+          </video>
+          </div>
         </div>
       </div>
       <div className="feature two">
@@ -24,8 +30,14 @@ function Features() {
             Save your favourites easily and always have something to watch.
           </h2>
         </div>
-        <div className="gif-container-feature2">
-          <img src="" alt="movie images"></img>
+        <div className="aanimation-card">
+          
+          <img src="/Images/mobile-stranger-T.jpg" className="anim-img" alt="TV"/>
+          <div className="gif-container feature2">
+          <video autoplay loop playsInline>
+          <source src="/Images/firstAnim.m4v" type="video/mp4"/>
+          </video>
+          </div>
         </div>
       </div>
       <div className="feature three">
@@ -36,8 +48,14 @@ function Features() {
             and TV.{" "}
           </h2>
         </div>
-        <div className="gif-container-feature3">
-          <video src="/Images/video-devices-2.m4v" autoplay loop playsInline></video>
+        <div className="zanimation-card">
+          
+          <img src="/Images/tv2.png" className="anim-img" alt="TV"/>
+          <div className="gif-container-feature3">
+          <video autoplay loop playsInline>
+          <source src="/Images/video-devices-2.m4v" type="video/mp4"/>
+          </video>
+          </div>
         </div>
       </div>
       <div className="feature four">
