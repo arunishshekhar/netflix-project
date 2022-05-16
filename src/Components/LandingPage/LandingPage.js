@@ -1,13 +1,12 @@
 import React from 'react'
-import Content from '../LoginPage/Content'
-import Features from '../LoginPage/Features'
-import Footer from '../LoginPage/Footer'
-import LoginPage from '../LoginPage/LoginPage'
+import Features from '../LandingPageContents/Features'
+import Footer from '../LandingPageContents/Footer'
+import HeaderPage from '../LandingPageContents/HeaderPage'
 
 function LandingPage() {
   return (
     <div>
-        <LoginPage/>
+        <HeaderPage/>
         <Features/>
         <Footer/>
     </div>

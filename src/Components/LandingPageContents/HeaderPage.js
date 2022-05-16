@@ -1,7 +1,7 @@
 import React from "react";
-import "./LoginPage.css";
+import "./HeaderPage.css";
 
-function LoginPage() {
+function HeaderPage() {
   return (
     <div className="loginPage">
       <div className="loginPage_bg">
@@ -46,4 +46,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default HeaderPage;
