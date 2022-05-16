@@ -11,9 +11,13 @@ function App() {
     <div className="App">
       <Router>
         {!user ? (
-          <LandingPage />
+          <Switch>
+         <Route exact path="/"> <LandingPage /></Route>
+         <Route exact path="/login"><SignIn/></Route>
+          </Switch>
         ) : (
           <Switch>
+            <Route exact path="/browse">
             <Route path="/">
               <Home />
             </Route>
