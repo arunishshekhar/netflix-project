@@ -13,7 +13,7 @@ function HeaderPage() {
           <h1 className="main-body-title">
             Unlimited movies, TV shows and more.
           </h1>
-          <h2>Watch anywhere. Cancel anytime.</h2>
+          <h2 className='main-subtitle'>Watch anywhere. Cancel anytime.</h2>
           <form className="signup-form">
             <h3>
               Ready to watch? Enter your email to create or restart your
