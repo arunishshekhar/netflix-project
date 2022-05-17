@@ -104,7 +104,6 @@ padding-left: 20px; */
   background: #e50914;
   color: #fff;
   padding: 1rem;
-  /* padding-right: 2rem; */
   font-weight:700;
 }
 
@@ -150,5 +149,21 @@ padding-left: 20px; */
 .logo{
   width:300px;
 }
+
+}
+@media screen and (max-width:500px){
+
+
+  .submit-email-btn{
+    font-size:1rem;
+    padding: 1rem;
+    margin-top: .5rem;
+   font-weight:700;
+  }
+
+  .form-input-submit {
+    flex-direction: column;
+    align-items:center;
+  }
 
 }
