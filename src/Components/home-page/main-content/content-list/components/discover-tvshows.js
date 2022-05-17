@@ -1,14 +1,15 @@
 import axios from "axios";
 import React from "react";
 import ArrayOfContent from "./array-of-content";
-
+import Spinner2 from "../../../../Spinner/Spinner2";
 
 
 class DiscoverTVSeries extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            TvSeriesList: []
+            TvSeriesList: [],
+           
         }
     }
 
@@ -26,7 +27,7 @@ class DiscoverTVSeries extends React.Component {
         return (
             <div>
                 <h2>Discover TV Series</h2>
-                <ArrayOfContent para={this.state.TvSeriesList} />
+                {!this.state.TvSeriesList.length?<Spinner2/>:<ArrayOfContent para={this.state.TvSeriesList} />}
             </div>
             )
     }

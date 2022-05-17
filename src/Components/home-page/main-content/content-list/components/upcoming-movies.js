@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import Spinner2 from "../../../../Spinner/Spinner2";
 import ArrayOfContent from "./array-of-content";
 
 
@@ -26,7 +27,7 @@ class UpcomingMovies extends React.Component {
         return (
             <div>
                 <h2>Upcoming Movies</h2>
-                <ArrayOfContent para={this.state.UpcomingMovieList} />
+                {!this.state.UpcomingMovieList.length?<Spinner2/>: <ArrayOfContent para={this.state.UpcomingMovieList} />}
             </div>
             )
     }

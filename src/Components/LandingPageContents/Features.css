@@ -168,6 +168,7 @@ img {
 .faq-answer.open{
   border: 0px solid black;
   border-top-width: 3px;
+  font-size:1.5rem;
  
   /* margin-top: 2px; */
 }
@@ -224,6 +225,6 @@ svg:not(:root) {
 @media screen and (min-width: 500px){
 
   .faqs-list-item button{
-    font-size:1rem;
+    /* font-size:1rem; */
   }
 }
