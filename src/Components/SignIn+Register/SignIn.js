@@ -2,24 +2,31 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { useUserAuth } from '../../Context/UserAuthContext';
 import './SignIn.css'
+import { useCookies } from 'react-cookie';
 
 function SignIn() {
-
+    const [cookie, setCookie] = useCookies(['cookie-name']);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
-    const { signUp, logIn } = useUserAuth();
-    const navigate = useHistory();
+    const { logIn } = useUserAuth();
+    const history = useHistory();
     const [auth, changeAuth] = useState('false');
+    let { user } = useUserAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         try {
-            await logIn(email, password)
-            setEmail('');
-            setPassword('');
-            changeAuth(true);
+            await logIn(email, password);
+            setCookie('loggedUser', email);
+            await setEmail('')
+            await setPassword('');
+            await changeAuth(true);
+            setTimeout(() => {
+                history.push('/browse');
+                window.location.reload(false);
+            }, 1000)   
         }
         catch (err) {
             setError(err.message)
@@ -29,17 +36,13 @@ function SignIn() {
     return (
         <div className='signInPage'>
             <div className='signInPage-wrapper'>
-               <Link to={'/'}> <img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
+               <Link to='/'><img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
                 <div className='signIn-container'>
-                    <form class='signIn-form' onSubmit={(e) => { 
-                        handleSubmit(e); 
-                        // navigate.push('/'); 
-                        }}>
+                    <form class='signIn-form' onSubmit={(e) => { handleSubmit(e) }}>
                         <h1>Sign In</h1>
                         <br />
-                        {error ? <p>{error}</p> : ''}
-                        {/* {console.log(auth)} */}
-                        {auth==true ? <p style={{'background-color':'green', padding: '0.5rem', 'border-radius': '0.55rem'}}>Log In Successful</p> : ''}
+                        {error ? <p style={{ 'background-color': 'rgb(230,61,58)', padding: '0.5rem', 'border-radius': '0.2rem' }}>{error}</p> : ''}
+                        {auth == true ? <p style={{ 'background-color': 'green', padding: '0.5rem', 'border-radius': '0.2rem' }}>Log In Successful</p> : ''}
                         <br />
                         <input className='input-field' type="email" placeholder='Enter Email-Id' value={email} onChange={(e) => { setEmail(e.target.value) }}></input>
                         <br />
