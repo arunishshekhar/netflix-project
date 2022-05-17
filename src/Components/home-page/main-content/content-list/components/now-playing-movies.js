@@ -26,7 +26,8 @@ class NowPlayingMovies extends React.Component {
         return (
             <div>
                 <h2>Now Playing Movies</h2>
-                {!this.state.NowPlayingMovieList.length?<Spinner2/>:<ArrayOfContent para={this.state.NowPlayingMovieList} />}
+                {!this.state.NowPlayingMovieList.length?<Spinner2/>:<ArrayOfContent para={this.state.NowPlayingMovieList} arrayOf="NowPlayMov"/>}
+
             </div>
             )
     }

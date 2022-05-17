@@ -27,7 +27,8 @@ class TopRatedMovies extends React.Component {
         return (
             <div>
                 <h2>Top Rated Movies</h2>
-               {!this.state.TopRatedMovieList.length?<Spinner2/>: <ArrayOfContent para={this.state.TopRatedMovieList} />}
+               {!this.state.TopRatedMovieList.length?<Spinner2/>: <ArrayOfContent para={this.state.TopRatedMovieList} arrayOf="TRMov"/>}
+
             </div>
             )
     }

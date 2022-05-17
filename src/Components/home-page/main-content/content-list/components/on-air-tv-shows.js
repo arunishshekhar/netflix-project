@@ -27,7 +27,8 @@ class OnAirTVShows extends React.Component {
         return (
             <div>
                 <h2>On-Air TV-Show</h2>
-               {!this.state.OnAirTVShowList.length?<Spinner2/>: <ArrayOfContent para={this.state.OnAirTVShowList} />}
+               {!this.state.OnAirTVShowList.length?<Spinner2/>: <ArrayOfContent para={this.state.OnAirTVShowList} arrayOf="OnAirTV"/>}
+
             </div>
             )
     }

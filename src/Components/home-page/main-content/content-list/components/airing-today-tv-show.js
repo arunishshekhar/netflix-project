@@ -28,7 +28,8 @@ class AiringTodayTVShows extends React.Component {
         return (
             <div>
                 <h2>Airing Today TV-Show</h2>
-               {this.state.loading?<Spinner2/>:<ArrayOfContent para={this.state.AiringTodayTVShowList} />}
+               {this.state.loading?<Spinner2/>:<ArrayOfContent para={this.state.AiringTodayTVShowList} arrayOf="AirTodayTV"/>}
+
             </div>
             )
     }

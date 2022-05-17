@@ -26,7 +26,9 @@ class PopularMovies extends React.Component {
         return (
             <div>
                 <h2>Popular Movies</h2>
-                {!this.state.PopularMovieList.length?<Spinner2/>:<ArrayOfContent para={this.state.PopularMovieList} />}
+
+                {!this.state.PopularMovieList.length?<Spinner2/>:<ArrayOfContent para={this.state.PopularMovieList} arrayOf="PopMov"/>}
+
             </div>
             )
     }

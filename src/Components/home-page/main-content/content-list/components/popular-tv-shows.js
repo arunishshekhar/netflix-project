@@ -27,7 +27,8 @@ class PopularTVShows extends React.Component {
         return (
             <div>
                 <h2>Popular TV-Show</h2>
-                {!this.state.PopularTVShowList.length?<Spinner2/>:<ArrayOfContent para={this.state.PopularTVShowList} />}
+                {!this.state.PopularTVShowList.length?<Spinner2/>:<ArrayOfContent para={this.state.PopularTVShowList} arrayOf="PopTV"/>}
+
             </div>
             )
     }
