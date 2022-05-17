@@ -1,0 +1,100 @@
+.features {
+    display:flex;
+    flex-direction:column;
+    background: rgb(0, 0, 0);
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 0,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+    color:white
+}
+
+.feature {
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    /* align-items: center; */
+    border-bottom: 8px solid #222;
+    /* margin: auto;
+    position: relative; */
+
+
+}
+
+.animation-card{
+    position: relative;
+    overflow: hidden;
+}
+
+.anim-img{
+    position: relative;
+    z-index: 2;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+video {
+    object-fit: cover;
+}
+
+
+.gif-container{
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    max-width: 73%;
+    max-height: 54%;
+    
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* z-index:5; */
+    /* background: url('/public/Images/tv1.png') center no-repeat;
+    background-size: cover;
+    height:40vh; */
+
+}
+
+/* .gif-container>video{
+    width: 100%;
+    height: 100%;
+} */
+/* .feature1 {
+    max-width: 73%;
+    max-height: 54%;
+    
+    top: 46%;
+    left: 50%;
+} */
+
+.gif-container-feature2 {
+    /* background: url('/public/Images/mobile-stranger-T.jpg') center no-repeat;
+    background-size: cover;
+    height:40vh; */
+
+}
+
+/* .feature3 {
+    background: url('/public/Images/tv2.png') center no-repeat;
+    background-size: cover;
+    height:40vh;
+    position: absolute;
+    max-width: 63%;
+    max-height: 47%;
+    top: 34%;
+    left: 50%;
+} */
+
+.gif-container-feature1 video{
+        /* position:absolute;
+        z-index: 1; */
+        /* top:60px; */
+      
+        /* bottom:1px; */
+        
+}
