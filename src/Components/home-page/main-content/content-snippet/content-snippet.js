@@ -1,7 +1,7 @@
 import React from "react";
 
-function MovieSnippet () {
+function ContentSnippet () {
     return <h2>Movie Snippet</h2>
 }
 
-export default MovieSnippet;
+export default ContentSnippet;
