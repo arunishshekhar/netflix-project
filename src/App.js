@@ -12,17 +12,17 @@ import { UserAuthContextProvider } from "./Context/UserAuthContext";
 
 function App() {
   const [cookies, removeCookie] = useCookies(['cookie-name']);
-  const user = cookies['loggedUser'];
-  console.log(user);
-  // removeCookie('loggedUser');
+  const user = cookies;
+  
   return (
     <div className="App">
+      {console.log(user)}
       <UserAuthContextProvider>
         <Router>
           <Switch>
             <Route exact path="/">
               {
-                ((user == 'undefined' ))
+                (!user.loggedUser || user.loggedUser == 'undefined')
                   ?
                   <LandingPage />
                   :

@@ -3,8 +3,10 @@ import { useUserAuth } from '../../Context/UserAuthContext';
 import './SignIn.css'
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 function SignUp() {
+    
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,20 +14,21 @@ function SignUp() {
     const [auth, changeAuth] = useState('false');
     const { user, signUp } = useUserAuth();
     const history = useHistory();
-
+    const [cookie, setCookie] = useCookies(['cookie-name']);
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         try {
             await signUp(email, password);
-            user.displayName = name;
-            console.log(user);
+            // user['displayName'] = name;
+            setCookie(`${email}`,`${name}`);
             await setEmail('');
             await setPassword('');
             await changeAuth(true);
             setTimeout(() => {
                 history.push('/login');
-            }, 1000);
+            }, 700);
         }
         catch (err) {
             setError(err.message)
@@ -36,7 +39,9 @@ function SignUp() {
 
         <div className='signInPage'>
             <div className='signInPage-wrapper'>
-            <Link to='/'><img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
+                <div className='loginPage-logo'>
+                    <Link to='/'><img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
+                </div>
                 <div className='signIn-container'>
                     <form class='signIn-form' onSubmit={handleSubmit}>
                         <h1>Sign Up</h1>
