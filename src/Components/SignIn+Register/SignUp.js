@@ -22,24 +22,27 @@ function SignUp() {
         return null;
     }
     return (
-        
+
         <div className='signInPage'>
-            <div className='signIn-container'>
+            <div className='signInPage-wrapper'>
+                <img className="logo" src="/Images/logo.svg" alt="logo" />
+                <div className='signIn-container'>
 
-                <form class='signIn-form' onSubmit={handleSubmit}>
-                    <h1>Sign Up</h1>
-                    <br />
-                    {error ? <p>{error}</p> : ''}
-                    <br />
-                    <input className='input-field' type="email" placeholder='Enter Email-Id' value={email} onChange={(e) => { setEmail(e.target.value) }}></input>
-                    <br />
-                    <br />
-                    <input className='input-field' type="password" placeholder='Enter Password' value={password} onChange={(e) => { setPassword(e.target.value) }}></input>
-                    <br />
-                    <br />
-                    <input className='submit-field' type="submit" value={'Register User'}></input>
-                </form>
+                    <form class='signIn-form' onSubmit={handleSubmit}>
+                        <h1>Sign Up</h1>
+                        <br />
+                        {error ? <p>{error}</p> : ''}
+                        <br />
+                        <input className='input-field' type="email" placeholder='Enter Email-Id' value={email} onChange={(e) => { setEmail(e.target.value) }}></input>
+                        <br />
+                        <br />
+                        <input className='input-field' type="password" placeholder='Enter Password' value={password} onChange={(e) => { setPassword(e.target.value) }}></input>
+                        <br />
+                        <br />
+                        <input className='submit-field' type="submit" value={'Register User'}></input>
+                    </form>
 
+                </div>
             </div>
         </div>
     )
