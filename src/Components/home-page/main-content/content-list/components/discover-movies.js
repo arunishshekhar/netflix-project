@@ -26,7 +26,7 @@ class DiscoverMovies extends React.Component {
         return (
             <div>
                 <h2>Discover Movies</h2>
-                <ArrayOfContent para={this.state.movieList} />
+                <ArrayOfContent para={this.state.movieList} arrayOf="DisMov"/>
             </div>)
     }
 

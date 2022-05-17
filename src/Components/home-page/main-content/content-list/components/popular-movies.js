@@ -26,7 +26,7 @@ class PopularMovies extends React.Component {
         return (
             <div>
                 <h2>Popular Movies</h2>
-                <ArrayOfContent para={this.state.PopularMovieList} />
+                <ArrayOfContent para={this.state.PopularMovieList} arrayOf="PopMov"/>
             </div>
             )
     }

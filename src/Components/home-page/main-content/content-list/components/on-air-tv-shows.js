@@ -26,7 +26,7 @@ class OnAirTVShows extends React.Component {
         return (
             <div>
                 <h2>On-Air TV-Show</h2>
-                <ArrayOfContent para={this.state.OnAirTVShowList} />
+                <ArrayOfContent para={this.state.OnAirTVShowList} arrayOf="OnAirTV"/>
             </div>
             )
     }

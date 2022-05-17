@@ -26,7 +26,7 @@ class DiscoverTVSeries extends React.Component {
         return (
             <div>
                 <h2>Discover TV Series</h2>
-                <ArrayOfContent para={this.state.TvSeriesList} />
+                <ArrayOfContent para={this.state.TvSeriesList} arrayOf="DisTV"/>
             </div>
             )
     }

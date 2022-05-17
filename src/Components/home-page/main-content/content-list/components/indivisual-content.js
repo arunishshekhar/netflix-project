@@ -1,4 +1,7 @@
 import React from "react";
+import "./carausal.css";
+
+
 /* 
 adult: false
 backdrop_path: "/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg"
@@ -18,12 +21,14 @@ vote_count: 1347
 
 // props.para Structure for movies UP
 
-function IndivisualContent (props) {
+function IndivisualContent(props) {
     return (
-        <section>
-            <img src={`https://image.tmdb.org/t/p/w300${(props.para.backdrop_path) ? props.para.backdrop_path : props.para.poster_path}`}/>
-            <p>{(props.para.title) ? props.para.title : props.para.name}</p>
-        </section>
+        <div className="card-container">
+            <section className="card">
+                <img src={`https://image.tmdb.org/t/p/w500${(props.para.backdrop_path) ? props.para.backdrop_path : props.para.poster_path}`} />
+                <p>{(props.para.title) ? props.para.title : props.para.name}</p>
+            </section>
+        </div>
     )
 }
 

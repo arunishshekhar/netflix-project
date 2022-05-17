@@ -26,7 +26,7 @@ class UpcomingMovies extends React.Component {
         return (
             <div>
                 <h2>Upcoming Movies</h2>
-                <ArrayOfContent para={this.state.UpcomingMovieList} />
+                <ArrayOfContent para={this.state.UpcomingMovieList} arrayOf="UpMov"/>
             </div>
             )
     }

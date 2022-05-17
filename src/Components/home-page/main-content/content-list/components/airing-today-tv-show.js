@@ -26,7 +26,7 @@ class AiringTodayTVShows extends React.Component {
         return (
             <div>
                 <h2>Airing Today TV-Show</h2>
-                <ArrayOfContent para={this.state.AiringTodayTVShowList} />
+                <ArrayOfContent para={this.state.AiringTodayTVShowList} arrayOf="AirTodayTV"/>
             </div>
             )
     }
