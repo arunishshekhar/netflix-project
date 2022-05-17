@@ -209,6 +209,7 @@ svg:not(:root) {
   .feature-title{
       width: 50%;
   }
+
   .faqs{
   max-width: 900px;
   font-size:1.8rem;
