@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 .carausal-container {
-    width: 90vw;
+    width: 100%;
     min-height: min-content;
     position: relative;
 }

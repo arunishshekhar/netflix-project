@@ -18,7 +18,7 @@ function ArrayOfContent(props) {
                 <button className="prev" onClick={() => {
                     if (pixel !== 0) {
                         const track = document.getElementById(`${props.arrayOf}`);
-                        transformPixel(pixel - 50)
+                        transformPixel((prevPixel)=>prevPixel===pixel - 50)
                         track.style.transform = `translateX(-${pixel}vw)`
                     }
                 }}>

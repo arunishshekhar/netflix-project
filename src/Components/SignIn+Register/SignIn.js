@@ -29,7 +29,7 @@ function SignIn() {
     return (
         <div className='signInPage'>
             <div className='signInPage-wrapper'>
-                <img className="logo" src="/Images/logo.svg" alt="logo" />
+               <Link to={'/'}> <img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
                 <div className='signIn-container'>
                     <form class='signIn-form' onSubmit={(e) => { 
                         handleSubmit(e); 

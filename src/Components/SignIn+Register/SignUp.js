@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useUserAuth } from '../../Context/UserAuthContext';
 import './SignIn.css'
 
+import {Link} from 'react-router-dom'
+
 function SignUp() {
 
     const [email, setEmail] = useState('');
@@ -25,10 +27,10 @@ function SignUp() {
 
         <div className='signInPage'>
             <div className='signInPage-wrapper'>
-                <img className="logo" src="/Images/logo.svg" alt="logo" />
+               <Link to="/"> <img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
                 <div className='signIn-container'>
 
-                    <form class='signIn-form' onSubmit={handleSubmit}>
+                    <form className='signIn-form' onSubmit={handleSubmit}>
                         <h1>Sign Up</h1>
                         <br />
                         {error ? <p>{error}</p> : ''}

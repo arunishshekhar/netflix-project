@@ -92,6 +92,7 @@ padding-left: 20px; */
 #input-email {
   border: none;
   padding: 1rem;
+  font-size: 1rem;
 }
 #input-email:focus {
   outline: none;
@@ -103,7 +104,7 @@ padding-left: 20px; */
   font-size:1.5rem;
   background: #e50914;
   color: #fff;
-  padding: 1rem;
+  padding: 1.1rem;
   font-weight:700;
 }
 
