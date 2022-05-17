@@ -5,12 +5,17 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import HomePage from './Components/home-page/home-page';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-      <App />
+
+     <App/> 
+
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function
