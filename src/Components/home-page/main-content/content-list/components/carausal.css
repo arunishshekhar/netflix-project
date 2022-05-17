@@ -33,10 +33,9 @@
 }
 
 .nav button {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 1px solid lightgray;
+    height: 70px;
+    width: 69px;
+    background:unset;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -45,11 +44,11 @@
 }
 
 .nav .prev {
-    left: -25px;
+    left: 0px;
 }
 
 .nav .next {
-    right: -25px;
+    right: 0px;
 }
 
 .card {
