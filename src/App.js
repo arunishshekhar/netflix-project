@@ -6,26 +6,27 @@ import Home from "./Components/Home/Home";
 import SignIn from "./Components/SignIn+Register/SignIn";
 import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
+import HomePage from "./Components/home-page/home-page";
 
 function App() {
-  const user = null;
+  // const user = null;
   return (
     <div className="App">
       <UserAuthContextProvider>
       <Router>
-        {!user ? (
+        {/* {!user ? ( */}
           <Switch>
             <Route exact path="/"><LandingPage /></Route>
             <Route exact path="/login"> <SignIn /></Route>
             <Route exact path="/signUp"><SignUp /></Route>
           </Switch>
-        ) : (
+        {/* ) : ( */}
           <Switch>
             <Route exact path="/browse">
-              <Home />
+              <HomePage />
             </Route>
           </Switch>
-        )}
+        {/* )} */}
       </Router>
       </UserAuthContextProvider>
     </div>
