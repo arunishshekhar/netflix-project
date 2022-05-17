@@ -1,32 +1,35 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import HomePage from "./Components/home-page/home-page";
 import LandingPage from "./Components/LandingPage/LandingPage";
-import Home from "./Components/Home/Home";
+import ProtectedRoute from "./Components/ProtectedRoute";
+
 import SignIn from "./Components/SignIn+Register/SignIn";
 import SignUp from "./Components/SignIn+Register/SignUp";
-import { UserAuthContextProvider } from "./Context/UserAuthContext";
+import { UserAuthContextProvider, useUserAuth } from "./Context/UserAuthContext";
+import { getAuth } from "firebase/auth";;
 
 function App() {
   const user = null;
+  // const { checkLogged } = useUserAuth();
+  console.log(getAuth());
   return (
     <div className="App">
       <UserAuthContextProvider>
-      <Router>
-        {!user ? (
+
+        <Router>
           <Switch>
             <Route exact path="/"><LandingPage /></Route>
             <Route exact path="/login"> <SignIn /></Route>
             <Route exact path="/signUp"><SignUp /></Route>
-          </Switch>
-        ) : (
-          <Switch>
             <Route exact path="/browse">
-              <Home />
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
             </Route>
           </Switch>
-        )}
-      </Router>
+        </Router>
       </UserAuthContextProvider>
     </div>
   );
