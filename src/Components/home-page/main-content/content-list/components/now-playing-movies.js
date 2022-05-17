@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import ArrayOfContent from "./array-of-content";
-
+import Spinner2 from "../../../../Spinner/Spinner2";
 
 
 class NowPlayingMovies extends React.Component {
@@ -22,11 +22,12 @@ class NowPlayingMovies extends React.Component {
     }
 
     render() {
-
+            
         return (
             <div>
                 <h2>Now Playing Movies</h2>
-                <ArrayOfContent para={this.state.NowPlayingMovieList} arrayOf="NowPlayMov"/>
+                {!this.state.NowPlayingMovieList.length?<Spinner2/>:<ArrayOfContent para={this.state.NowPlayingMovieList} arrayOf="NowPlayMov"/>}
+
             </div>
             )
     }

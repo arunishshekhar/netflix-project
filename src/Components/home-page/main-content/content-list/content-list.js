@@ -10,20 +10,21 @@ import OnAirTVShows from "./components/on-air-tv-shows";
 import PopularTVShows from "./components/popular-tv-shows";
 import TopRatedTVShows from "./components/top-rated-tv-shows";
 
-
 function ContentList() {
-    return <>
-        <DiscoverMovies />
-        <DiscoverTVSeries />
-        <NowPlayingMovies />
-        <PopularMovies />
-        <TopRatedMovies />
-        <UpcomingMovies />
-        <AiringTodayTVShows />
-        <OnAirTVShows />
-        <PopularTVShows />
-        <TopRatedTVShows />
+  return (
+    <>
+      <DiscoverMovies />
+      <DiscoverTVSeries />
+      <NowPlayingMovies />
+      <PopularMovies />
+      <TopRatedMovies />
+      <UpcomingMovies />
+      <AiringTodayTVShows />
+      <OnAirTVShows />
+      <PopularTVShows />
+      <TopRatedTVShows />
     </>
+  );
 }
 
-export default ContentList
+export default ContentList;

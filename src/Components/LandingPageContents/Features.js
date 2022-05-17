@@ -35,7 +35,7 @@ function Features() {
         <div className="animation-card">
           <img src="/Images/tv1.png" className="anim-img" alt="TV" />
           <div className="gif-container-feature1">
-            <video autoPlay loop playsInline>
+            <video autoPlay loop playsInline muted>
               <source src="/Images/firstAnim.mp4" type="video/mp4" />
             </video>
           </div>
@@ -75,7 +75,7 @@ function Features() {
         <div className="animation-card">
           <img src="/Images/tv2.png" className="anim-img" alt="TV" />
           <div className="gif-container-feature3">
-            <video autoPlay loop playsInline>
+            <video autoPlay loop playsInline muted>
               <source src="/Images/video-devices-2.m4v" type="video/x-m4v" />
             </video>
           </div>

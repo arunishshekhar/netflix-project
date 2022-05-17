@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import Spinner2 from "../../../../Spinner/Spinner2";
 import ArrayOfContent from "./array-of-content";
 
 
@@ -26,7 +27,8 @@ class OnAirTVShows extends React.Component {
         return (
             <div>
                 <h2>On-Air TV-Show</h2>
-                <ArrayOfContent para={this.state.OnAirTVShowList} arrayOf="OnAirTV"/>
+               {!this.state.OnAirTVShowList.length?<Spinner2/>: <ArrayOfContent para={this.state.OnAirTVShowList} arrayOf="OnAirTV"/>}
+
             </div>
             )
     }
