@@ -16,9 +16,8 @@
 }
 
 .track {
-    transform: translateX("-10px");
     transition: 0.3s;
-    width: fit-content;
+    width: 100%;
 
 }
 

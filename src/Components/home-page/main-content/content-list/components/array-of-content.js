@@ -42,7 +42,7 @@ function ArrayOfContent(props) {
                     </svg>
                 </button>
                 <button className="next" onClick={() => {
-                    if (pixel < (document.getElementById(props.arrayOf).offsetWidth) / 15 - 50) {
+                    if (pixel < (document.getElementById(props.arrayOf).clientWidth)/6) {
                         transformPixel((prevPixel) => prevPixel + 50)
                     }
                 }}>
