@@ -13,6 +13,10 @@ export function UserAuthContextProvider({ children }) {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    function logOut(){
+        return signOut(auth);
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -22,7 +26,7 @@ export function UserAuthContextProvider({ children }) {
         }
     }, [])
 
-    return (<userAuthContext.Provider value={{ user, signUp, logIn }}> {children} </userAuthContext.Provider>)
+    return (<userAuthContext.Provider value={{ user, signUp, logIn, logOut }}> {children} </userAuthContext.Provider>)
 }
 
 export function useUserAuth() {
