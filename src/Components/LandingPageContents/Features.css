@@ -25,6 +25,11 @@
 
 .feature-title {
   flex: 0 1 auto;
+  text-align: left;
+}
+.feature-description{
+  font-weight: 300;
+  font-size: x-large;
 }
 
 .animation-card {

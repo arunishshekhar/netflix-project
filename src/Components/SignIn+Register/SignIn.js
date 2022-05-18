@@ -25,8 +25,7 @@ function SignIn() {
             setTimeout(() => {
                 console.log(user);
                 history.push('/browse');
-
-            }, 1000)
+            }, 700)
         }
         catch (err) {
             setError(err.message)

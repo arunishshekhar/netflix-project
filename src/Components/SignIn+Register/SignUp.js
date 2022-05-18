@@ -8,11 +8,11 @@ import { useCookies } from 'react-cookie';
 function SignUp() {
     
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    const { user, signUp, signUpEmail, setSignUpEmail } = useUserAuth();
+    const [email, setEmail] = useState(signUpEmail);
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [auth, changeAuth] = useState('false');
-    const { user, signUp } = useUserAuth();
     const history = useHistory();
     const [cookie, setCookie] = useCookies(['cookie-name']);
     
@@ -49,10 +49,10 @@ function SignUp() {
                         {error ? <p style={{ 'background-color': 'rgb(230,61,58)', padding: '0.5rem', 'border-radius': '0.2rem' }}>{error}</p> : ''}
                         {auth == true ? <p style={{ 'background-color': 'green', padding: '0.5rem', 'border-radius': '0.2rem' }}>User Registered!</p> : ''}
                         <br />
-                        <input className='input-field' type="text" placeholder='Enter Name' value={name} onChange={(e) => { setName(e.target.value) }}></input>
+                        <input className='input-field' type="text" placeholder='Enter Name' value={name} required onChange={(e) => { setName(e.target.value) }}></input>
                         <br />
                         <br />
-                        <input className='input-field' type="email" placeholder='Enter Email-Id' value={email} onChange={(e) => { setEmail(e.target.value) }}></input>
+                        <input className='input-field' type="email" placeholder='Enter Email-Id' value={email} onChange={(e) => { setSignUpEmail(''); setEmail(e.target.value); }}></input>
                         <br />
                         <br />
                         <input className='input-field' type="password" placeholder='Enter Password' value={password} onChange={(e) => { setPassword(e.target.value) }}></input>

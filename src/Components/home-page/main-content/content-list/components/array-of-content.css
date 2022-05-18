@@ -13,3 +13,8 @@
     transform: rotate(180deg);
 
 }
+
+.array-of-content a {
+    text-decoration: none;
+    color: white;
+}

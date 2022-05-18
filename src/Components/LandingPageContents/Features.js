@@ -27,7 +27,8 @@ function Features() {
       <div className="feature one">
         <div className="feature-title">
           <h1>Enjoy on your TV.</h1>
-          <h2>
+          <br/>
+          <h2 className="feature-description">
             Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
             players and more.
           </h2>
@@ -44,7 +45,8 @@ function Features() {
       <div className="feature two">
         <div className="feature-title">
           <h1>Download your shows to watch offline.</h1>
-          <h2>
+          <br/>
+          <h2 className="feature-description">
             Save your favourites easily and always have something to watch.
           </h2>
         </div>
@@ -67,7 +69,8 @@ function Features() {
       <div className="feature three">
         <div className="feature-title">
           <h1>Watch everywhere.</h1>
-          <h2>
+          <br/>
+          <h2 className="feature-description">
             Stream unlimited movies and TV shows on your phone, tablet, laptop,
             and TV.{" "}
           </h2>
@@ -84,7 +87,8 @@ function Features() {
       <div className="feature four">
         <div className="feature-title">
           <h1>Create profiles for children.</h1>
-          <h2>
+          <br/>
+          <h2 className="feature-description">
             Send children on adventures with their favourite characters in a
             space made just for them—free with your membership.{" "}
           </h2>

@@ -2,12 +2,17 @@ import React from "react";
 import "./HeaderPage.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useUserAuth } from "../../Context/UserAuthContext";
+
 function HeaderPage() {
   const [mailInput, setEmail] = useState("");
+  const { signUpEmail, setSignUpEmail } = useUserAuth();
+
   // const [isMailValid, setValid] = useState(false);
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
+    setSignUpEmail(mailInput);
     // validateEmail(e.target.value);
   };
 
@@ -34,12 +39,12 @@ function HeaderPage() {
           <h1 className="main-body-title">
             Unlimited movies, TV shows and more.
           </h1>
-          <h2 className="main-subtitle">Watch anywhere. Cancel anytime.</h2>
+          <p className="main-subtitle">Watch anywhere. Cancel anytime.</p>
           <form className="signup-form">
-            <h3>
+            <p style={{ 'font-size': '1.3rem' }}>
               Ready to watch? Enter your email to create or restart your
               membership.
-            </h3>
+            </p>
             <div className="form-input-submit">
               <div className="input-field-err">
                 <ul className="input-column">
@@ -47,7 +52,7 @@ function HeaderPage() {
                     {" "}
                     <label htmlFor="input-email">Email address</label>
                   </li>
-                  <li>
+                  <li className="email-box">
                     <input
                       type="email"
                       id="input-email"
@@ -62,7 +67,7 @@ function HeaderPage() {
                 {" "}
                 <button
                   className="submit-email-btn"
-                  // onClick={validateEmail}
+                // onClick={validateEmail}
                 >{`Get Started  >`}</button>
               </Link>
             </div>
