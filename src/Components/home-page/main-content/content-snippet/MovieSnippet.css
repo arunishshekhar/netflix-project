@@ -31,4 +31,5 @@
 
 .cover-page-image video{
     z-index: -1;
+    width:100%;
 }
