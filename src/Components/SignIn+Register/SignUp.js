@@ -49,7 +49,7 @@ function SignUp() {
                         {error ? <p style={{ 'background-color': 'rgb(230,61,58)', padding: '0.5rem', 'border-radius': '0.2rem' }}>{error}</p> : ''}
                         {auth == true ? <p style={{ 'background-color': 'green', padding: '0.5rem', 'border-radius': '0.2rem' }}>User Registered!</p> : ''}
                         <br />
-                        <input className='input-field' type="text" placeholder='Enter Name' value={name} onChange={(e) => { setName(e.target.value) }}></input>
+                        <input className='input-field' type="text" placeholder='Enter Name' value={name} required onChange={(e) => { setName(e.target.value) }}></input>
                         <br />
                         <br />
                         <input className='input-field' type="email" placeholder='Enter Email-Id' value={email} onChange={(e) => { setEmail(e.target.value) }}></input>

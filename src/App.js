@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCookies } from 'react-cookie';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Components/home-page/home-page";
 import LandingPage from "./Components/LandingPage/LandingPage";
@@ -14,7 +14,7 @@ import VideoPlayer from "./Components/video-player/video-player";
 function App() {
   const [cookies, removeCookie] = useCookies(['cookie-name']);
   const user = cookies;
-  
+
   return (
     <div className="App">
       {console.log(user)}
@@ -27,7 +27,7 @@ function App() {
                   ?
                   <LandingPage />
                   :
-                  <HomePage />
+                  <Redirect to='/browse' />
               }
             </Route>
             <Route exact path="/login"> <SignIn /></Route>
@@ -38,7 +38,9 @@ function App() {
               </ProtectedRoute>
             </Route>
             <Route exact path="/browse/:id">
-              <VideoPlayer/>
+              <ProtectedRoute>
+                <VideoPlayer />
+              </ProtectedRoute>
             </Route>
           </Switch>
         </Router>
