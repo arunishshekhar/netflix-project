@@ -25,7 +25,7 @@ class DiscoverTVSeries extends React.Component {
     render() {
 
         return (
-            <div>
+            <div >
                 <h2>Discover TV Series</h2>
                 {!this.state.TvSeriesList.length?<Spinner2/>:<ArrayOfContent para={this.state.TvSeriesList} arrayOf="DisTV"/>}
 
