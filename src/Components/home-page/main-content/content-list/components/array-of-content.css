@@ -1,3 +1,15 @@
 .array-of-content {
     display: flex;
 }
+
+.prev svg{
+        /* background: #141414; */
+        fill: #e10510;
+
+}
+
+.next svg{
+    fill: #e10510;
+    transform: rotate(180deg);
+
+}

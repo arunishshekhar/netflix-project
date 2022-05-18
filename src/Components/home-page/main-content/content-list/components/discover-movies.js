@@ -24,8 +24,8 @@ class DiscoverMovies extends React.Component {
     render() {
 
         return (
-            <div>
-                <h2>Discover Movies</h2>
+            <div >
+                <h2 >Discover Movies</h2>
                 {!this.state.movieList.length?<Spinner2/>:<ArrayOfContent para={this.state.movieList} arrayOf="DisMov"/>}
 
             </div>)

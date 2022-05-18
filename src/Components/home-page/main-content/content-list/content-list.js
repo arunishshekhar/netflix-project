@@ -10,9 +10,11 @@ import OnAirTVShows from "./components/on-air-tv-shows";
 import PopularTVShows from "./components/popular-tv-shows";
 import TopRatedTVShows from "./components/top-rated-tv-shows";
 
+import './content-list.css'
+
 function ContentList() {
   return (
-    <>
+    <div className="movies-container">
       <DiscoverMovies />
       <DiscoverTVSeries />
       <NowPlayingMovies />
@@ -23,7 +25,7 @@ function ContentList() {
       <OnAirTVShows />
       <PopularTVShows />
       <TopRatedTVShows />
-    </>
+    </div>
   );
 }
 
