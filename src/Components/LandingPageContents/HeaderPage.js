@@ -2,13 +2,17 @@ import React from "react";
 import "./HeaderPage.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useUserAuth } from "../../Context/UserAuthContext";
 
 function HeaderPage() {
   const [mailInput, setEmail] = useState("");
+  const { signUpEmail, setSignUpEmail } = useUserAuth();
+
   // const [isMailValid, setValid] = useState(false);
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
+    setSignUpEmail(mailInput);
     // validateEmail(e.target.value);
   };
 
@@ -37,7 +41,7 @@ function HeaderPage() {
           </h1>
           <p className="main-subtitle">Watch anywhere. Cancel anytime.</p>
           <form className="signup-form">
-            <p style={{'font-size':'1.3rem'}}>
+            <p style={{ 'font-size': '1.3rem' }}>
               Ready to watch? Enter your email to create or restart your
               membership.
             </p>
