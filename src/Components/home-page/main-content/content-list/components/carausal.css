@@ -16,8 +16,9 @@
 }
 
 .track {
-    transform: translateX("-10px");
     transition: 0.3s;
+    width: 100%;
+
 }
 
 .carausal-container .card-container {
