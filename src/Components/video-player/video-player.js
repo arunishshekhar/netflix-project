@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactPlayer from 'react-player'
 import { useParams } from 'react-router-dom';
 import "./video-player.css"
