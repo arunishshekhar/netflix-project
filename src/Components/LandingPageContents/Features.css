@@ -25,6 +25,11 @@
 
 .feature-title {
   flex: 0 1 auto;
+  text-align: left;
+}
+.feature-description{
+  font-weight: 300;
+  font-size: x-large;
 }
 
 .animation-card {
@@ -116,15 +121,85 @@ img {
 }
 
 .faqs{
-    display:flex;
-    justify-content: center;
+    /* display:flex;
+    justify-content: center; */
+    margin: 1.25em auto;
+    max-width: 815px;
+    font-size:1.5rem;
+
+}
+
+.faqs h2{
+  padding:1rem;
 }
 
 .faqs-list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* text-align: left; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.faqs-list-item{
+    display: flex;
+    flex-direction:column;
+    /* align-items: stretch; */
+    margin: 0 0 8px 0px;
+    background: #303030;
+
+
+}
+
+.faq-answer span {
+  display: inline-block;
+  padding: 1.2em;
+}
+
+.faqs-list-item button{
+    background: #303030;
+    color:white;
+    font-size: 1.2rem;
+    padding: 0.8rem 2.2rem 0.8rem 1.2rem;
+    margin-bottom: 3px;
+    font-weight: 400;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    text-transform: none;
+    overflow: visible;
+    cursor: pointer;
+}
+.faq-answer.open{
+  border: 0px solid black;
+  border-top-width: 3px;
+  font-size:1.5rem;
+ 
+  /* margin-top: 2px; */
+}
+.faqs .faqs-list-item .svg-closed {
+    transform: translateY(-50%) rotate(-45deg);
+}
+.faqs .faq-answer.open {
+    max-height: 1200px;
+    transition: max-height .25s cubic-bezier(.5,0,.1,1);
+}
+
+.faqs .faq-answer {
+    overflow: hidden;
+}
+.faqs .svg-icon-thin-x {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1em;
+    width: 1em;
+    fill: #fff;
+}
+
+svg:not(:root) {
+    overflow: hidden;
 }
 @media screen and (min-width: 900px) {
   .feature {
@@ -139,5 +214,22 @@ img {
   }
   .feature-title{
       width: 50%;
+  }
+
+  .faqs{
+  max-width: 900px;
+  font-size:1.8rem;
+  }
+
+  .faqs-list-item button{
+    font: size 1.5rem;
+  }
+}
+
+
+@media screen and (min-width: 500px){
+
+  .faqs-list-item button{
+    /* font-size:1rem; */
   }
 }

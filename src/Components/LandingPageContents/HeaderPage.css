@@ -17,9 +17,16 @@ object-fit: contain;
 padding-left: 20px; */
   width: 150px;
 }
+
+.main-content-centre{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 45rem;
+}
 .main-body-title {
-  font-size: 3rem;
-  padding: 10px;
+  /* font-size: 3rem; */
+  padding: 1rem;
 }
 
 .login-sigin-btn {
@@ -92,6 +99,7 @@ padding-left: 20px; */
 #input-email {
   border: none;
   padding: 1rem;
+  font-size: 1rem;
 }
 #input-email:focus {
   outline: none;
@@ -103,8 +111,7 @@ padding-left: 20px; */
   font-size:1.5rem;
   background: #e50914;
   color: #fff;
-  padding: 1rem;
-  /* padding-right: 2rem; */
+  padding: 1.1rem;
   font-weight:700;
 }
 
@@ -128,11 +135,12 @@ padding-left: 20px; */
 @media screen and (min-width:1000px) {
 
  .main-body-title{
-   font-size:5rem;
+   font-size:4rem;
  }
 
  .main-subtitle{
-   font-size:3rem;
+   font-size:2rem;
+   font-weight: 500;
  }
  .signup-form h3{
    font-size:2rem;
@@ -144,11 +152,29 @@ padding-left: 20px; */
 }
 
 .login-sigin-btn{
-  padding:1rem 2rem;
+  padding:0.8rem;
+  font-size: larger;
   font-weight: 600;
+  border-radius: 0.4rem;
 }
 .logo{
   width:300px;
 }
+
+}
+@media screen and (max-width:500px){
+
+
+  .submit-email-btn{
+    font-size:1rem;
+    padding: 1rem;
+    margin-top: .5rem;
+   font-weight:700;
+  }
+
+  .form-input-submit {
+    flex-direction: column;
+    align-items:center;
+  }
 
 }

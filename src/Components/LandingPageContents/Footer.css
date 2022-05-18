@@ -1,5 +1,7 @@
 
 .footer{
+    border-top: 8px solid #222;
+
     background:black;
     color: #757575;
     text-align: left;
@@ -49,14 +51,14 @@
 
     .footer{
       
-        font-size:2rem;
+        font-size:1.5rem;
     }
     .footer-nav{
         font-size:1.5rem;
     }
 
     .sub-footer-nav li{
-        padding: 1rem 10rem;
+        padding: 1rem 5rem;
     }
     
 }
