@@ -23,7 +23,7 @@ vote_count: 1347
 
 function IndivisualContent(props) {
     return (
-
+    
         <div className="card-container">
             <section className="card">
                 <img src={`https://image.tmdb.org/t/p/w500${(props.para.backdrop_path) ? props.para.backdrop_path : props.para.poster_path}`} />

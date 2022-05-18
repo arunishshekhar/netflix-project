@@ -8,6 +8,7 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import SignIn from "./Components/SignIn+Register/SignIn";
 import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
+import VideoPlayer from "./Components/video-player/video-player";
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
               <ProtectedRoute>
                 <HomePage />
               </ProtectedRoute>
+            </Route>
+            <Route exact path="/browse/:id">
+              <VideoPlayer/>
             </Route>
           </Switch>
         </Router>
