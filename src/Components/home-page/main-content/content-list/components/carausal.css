@@ -58,6 +58,8 @@
     display: block;
     flex: 1 1 0px;
     transition: transform 500ms;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .track:focus-within .card,
