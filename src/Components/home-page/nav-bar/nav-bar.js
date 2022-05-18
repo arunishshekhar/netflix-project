@@ -23,10 +23,10 @@ function NavBar() {
     return (
         <div className="navbar">
             <img className="navbar-logo" src="/Images/logo.svg" alt="logo" />
-            <div class="userDropdown-container">
+            <div className="userDropdown-container">
                 {console.log(cookie)}
-                <button onClick={myFunction} class="dropbtn">{cookie[cookie['loggedUser']]}</button>
-                <div class="userDropdown">
+                <button onClick={myFunction} className="dropbtn">{cookie[cookie['loggedUser']]}</button>
+                <div className="userDropdown">
                     <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
                 </div>
             </div>

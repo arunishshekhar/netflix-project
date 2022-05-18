@@ -2,7 +2,7 @@ import React, { useState,useEffect} from "react";
 import IndivisualContent from "./indivisual-content";
 import "./array-of-content.css"
 import "./carausal.css"
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 
 
 function ArrayOfContent(props) {
@@ -22,10 +22,7 @@ function ArrayOfContent(props) {
             <div className="carausal-container-inner">
                 <div className="track" id={props.arrayOf}>
                     {props.para.map((indiContent) => (indiContent.backdrop_path) ?
-                    //    <Link to={`/play/${indiContent.id}`}>  {/* </Link>  */}
-                       <IndivisualContent para={indiContent} key={indiContent.id} />
-                      
-                       : null)}
+                        <Link to = { `/browse/${indiContent.id}`}><IndivisualContent para={indiContent} key={indiContent.id} /></Link> : null)}
                 </div>
             </div>
             <div className="nav">
