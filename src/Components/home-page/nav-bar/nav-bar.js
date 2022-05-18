@@ -9,20 +9,30 @@ function NavBar() {
     const { logOut } = useUserAuth();
     const history = useHistory();
     const user = cookie['loggedUser'];
-    function handleClick() {
+    function handleSignOut() {
         logOut();
         removeCookie('loggedUser');
         history.push('/');
         window.location.reload(false);
     }
 
+    function myFunction() {
+        document.querySelector(".userDropdown").classList.toggle("show");
+    }
+
     return (
-            <div className="navbar">
-                <img className="logo" src="/Images/logo.svg" alt="logo" />
-                <p>{(user)? user:''}</p>
-                {/* {console.log(user)} */}
-                <button className="login-sigin-btn" onClick={handleClick}>Sign Out</button>
+        <div className="navbar">
+            <img className="navbar-logo" src="/Images/logo.svg" alt="logo" />
+            <div class="userDropdown-container">
+                {console.log(cookie)}
+                <button onClick={myFunction} class="dropbtn">{cookie[cookie['loggedUser']]}</button>
+                <div class="userDropdown">
+                    <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
+                </div>
             </div>
+
+
+        </div>
     )
 }
 

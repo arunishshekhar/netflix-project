@@ -9,10 +9,9 @@ function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
-    const { logIn } = useUserAuth();
+    const { user, logIn } = useUserAuth();
     const history = useHistory();
     const [auth, changeAuth] = useState('false');
-    let { user } = useUserAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,13 +19,14 @@ function SignIn() {
         try {
             await logIn(email, password);
             setCookie('loggedUser', email);
-            await setEmail('')
+            await setEmail('');
             await setPassword('');
             await changeAuth(true);
             setTimeout(() => {
+                console.log(user);
                 history.push('/browse');
-                window.location.reload(false);
-            }, 1000)   
+
+            }, 1000)
         }
         catch (err) {
             setError(err.message)
@@ -36,7 +36,9 @@ function SignIn() {
     return (
         <div className='signInPage'>
             <div className='signInPage-wrapper'>
-               <Link to='/'><img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
+                <div className='loginPage-logo'>
+                    <Link to='/'><img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
+                </div>
                 <div className='signIn-container'>
                     <form class='signIn-form' onSubmit={(e) => { handleSubmit(e) }}>
                         <h1>Sign In</h1>
