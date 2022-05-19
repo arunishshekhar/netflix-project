@@ -56,7 +56,7 @@ function IndivisualMovie() {
     console.log(moviesCredits);
     return (
         <div>
-            <h1>I AM MOVIE</h1>
+            <h1>{movieDetail.title}</h1>
             {!similarMovies.length ? <Spinner2 /> : <ArrayOfContent para={similarMovies} arrayOf="SimilarMov" />}
             {!recommendedMovies.length ? <Spinner2 /> : <ArrayOfContent para={recommendedMovies} arrayOf="RecommendedMovies" />}
 
