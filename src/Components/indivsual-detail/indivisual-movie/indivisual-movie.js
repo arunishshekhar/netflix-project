@@ -63,10 +63,12 @@ function IndivisualMovie() {
     */
 
     // to access poster https://image.tmdb.org/t/p/w500  <= add url at end
+
     // console.log(movieDetail);
     // console.log(similarMovies);
     // console.log(recommendedMovies);
     // console.log(moviesCredits);
+
 
     return (
         <div className="individual-detail-main">

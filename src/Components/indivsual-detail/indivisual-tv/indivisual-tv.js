@@ -306,7 +306,7 @@ function IndivisualTV() {
     const [TVDetail, setTVDetail] = useState({})
     const [similarTV, setSimilarTV] = useState({})
     const [recommendedTV, setRecommendedTV] = useState({})
-    // const [moviesCredits, setMoviesCredits] = useState({})
+    const [TVCredits, setTVCredits] = useState({})
 
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US`)
@@ -315,6 +315,9 @@ function IndivisualTV() {
             .then((dataFromAPI) => setSimilarTV(dataFromAPI.data["results"]));
         axios.get(`https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US&page=1`)
             .then((dataFromAPI) => setRecommendedTV(dataFromAPI.data["results"]));
+        axios.get(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US`)
+            .then((dataFromAPI) => setTVCredits(dataFromAPI.data["cast"]))
+
 
     }, [id])
 
@@ -331,9 +334,8 @@ function IndivisualTV() {
                 <p className="video-property-description">"{TVDetail.overview ? TVDetail.overview : TVDetail.tagline}"</p>
                 {console.log(TVDetail)}
             </div>
-
-            {!similarTV.length ? <Spinner2 /> : <ArrayOfContent para={similarTV} arrayOf="SimilarMov" />}
-            {!recommendedTV.length ? <Spinner2 /> : <ArrayOfContent para={recommendedTV} arrayOf="RecommendedMovies" />}
+            {!similarTV.length ? <Spinner2 /> : <ArrayOfContent para={similarTV} arrayOf="SimilarTV" />}
+            {!recommendedTV.length ? <Spinner2 /> : <ArrayOfContent para={recommendedTV} arrayOf="RecommendedTV" />}
 
         </div>
     )

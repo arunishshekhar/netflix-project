@@ -14,16 +14,16 @@ import './content-list.css'
 
 function ContentList() {
   return (
-    <div className="movies-container">
+    <div className="content-container">
       <DiscoverMovies />
       <DiscoverTVSeries />
-      <NowPlayingMovies />
-      <PopularMovies />
       <TopRatedMovies />
-      <UpcomingMovies />
       <AiringTodayTVShows />
+      <NowPlayingMovies />
       <OnAirTVShows />
+      <UpcomingMovies />
       <PopularTVShows />
+      <PopularMovies />
       <TopRatedTVShows />
     </div>
   );

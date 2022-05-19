@@ -23,8 +23,8 @@ function SignIn() {
             await setPassword('');
             await changeAuth(true);
             setTimeout(() => {
-                console.log(user);
-                history.push('/browse');
+                // console.log(user);
+                history.push('/browse/home');
             }, 700)
         }
         catch (err) {
