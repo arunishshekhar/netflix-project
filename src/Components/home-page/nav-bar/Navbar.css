@@ -12,28 +12,42 @@
     justify-content: space-between;
 }
 
-.navbar>p {
-    background-color: red;
-    padding: 1rem;
-}
-
 .navbar-logo{
     width: 15rem;
 }
-
+.navbar-right{
+    display: flex;
+    flex-direction: row;
+}
+.search-bar{
+    padding: 0.3rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: large;
+    opacity: 0.7;
+    max-width: 5rem;
+}
+.search-bar:focus{
+    outline-width: 0;
+    opacity: 1;
+    max-width: 10rem;
+}
 
 /*------------------------------------------------------------------------------------  */
 
 .dropbtn {
     cursor: pointer;
-    color: white;
-    padding: 1.5rem;
+    color: black;
+    padding: 0.3rem;
     border: none;
     border-radius: 0.3rem;
-    background-color: black;
-    opacity: 0.4;
+    background-color: white;
+    font-size: large;
+    opacity: 0.7;
     font-weight: 700;
-
+    margin-left: 1rem;
+    min-height: 3rem;
+    min-width: 6rem;
 }
 
 .dropbtn:hover,
@@ -54,11 +68,12 @@
     /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
     z-index: 1;
     cursor: pointer;
+    margin-left: 1rem;
 }
 
 .userDropdown-content {
-    padding: 1rem;
-
+    padding: 0.4rem;
+    font-size: large;
 }
 .userDropdown-content:hover {
     background-color: red;

@@ -21,12 +21,12 @@ function NavBar() {
         document.querySelector(".userDropdown").classList.toggle("show");
     }
 
-    const [value,setValue] = useState('');
+    const [value, setValue] = useState('');
 
-    function onChangeHandler (event) {
+    function onChangeHandler(event) {
         setValue(event.target.value)
         if (value.length >= 2) {
-            history.push("/browse/search");     
+            history.push("/browse/search");
         }
         else {
             history.push("/browse/home")
@@ -35,20 +35,20 @@ function NavBar() {
 
     return (
         <div className="navbar">
-            <Link to="/browse/home"><img className="navbar-logo" src="/Images/logo.svg" alt="logo" /></Link>
-            <div>
+            <div className="navbar-left">
+                <Link to="/browse/home"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
                 <Link to="/browse/home">Home</Link>
                 <Link to="/browse/movies">Movies</Link>
                 <Link to="/browse/tv">TV Shows</Link>
             </div>
-            <div>
-                <input type="text" id="searchID" placeholder="What to Search" onChange={onChangeHandler} value={value}></input>
-            </div>
 
-            <div className="userDropdown-container">
-                <button onClick={myFunction} className="dropbtn">{cookie[cookie['loggedUser']]}</button>
-                <div className="userDropdown">
-                    <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
+            <div className="navbar-right">
+                <input className= 'search-bar'type="text" id="searchID" placeholder='Search' onChange={onChangeHandler} value={value} /><br/>
+                <div className="userDropdown-container">
+                    <button onClick={myFunction} className="dropbtn">{cookie[cookie['loggedUser']]?cookie[cookie['loggedUser']]:'Profile'}</button>
+                    <div className="userDropdown">
+                        <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
+                    </div>
                 </div>
             </div>
         </div>
