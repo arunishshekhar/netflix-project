@@ -7,6 +7,7 @@ import Spinner2 from "../../Spinner/Spinner2";
 function IndivisualMovie() {
     const { id } = useParams();
 
+    
     const [movieDetail, setMovieDetail] = useState({})
     const [similarMovies, setSimilarMovies] = useState({})
     const [recommendedMovies, setRecommendedMovies] = useState({})
