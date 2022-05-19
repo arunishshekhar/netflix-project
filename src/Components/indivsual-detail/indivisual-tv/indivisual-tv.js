@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArrayOfContent from "../../home-page/main-content/content-list/components/array-of-content";
 import Spinner2 from "../../Spinner/Spinner2";
-
+import VideoPlayer from '../../video-player/video-player'
+import NavBar from "../../home-page/nav-bar/nav-bar";
 /* 
 {
     "adult": false,
@@ -317,14 +318,25 @@ function IndivisualTV() {
         axios.get(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US`)
             .then((dataFromAPI) => setTVCredits(dataFromAPI.data["cast"]))
 
+
     }, [id])
 
 
     return (
-        <div>
-            <h1>{TVDetail.name}</h1>
+        <div className="individual-detail-main">
+            <NavBar />
+            <VideoPlayer />
+            <br />
+            <div className="video-details">
+                <p className='video-property'>Title:</p>&nbsp;&nbsp;{TVDetail.name ? TVDetail.name : TVDetail.original_name}<br />
+                <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{TVDetail.vote_average?TVDetail.vote_average:'Not Known'}<br/>
+                <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{TVDetail.first_air_date?TVDetail.first_air_date:'Not Known'}<br/><br/>
+                <p className="video-property-description">"{TVDetail.overview ? TVDetail.overview : TVDetail.tagline}"</p>
+                {console.log(TVDetail)}
+            </div>
             {!similarTV.length ? <Spinner2 /> : <ArrayOfContent para={similarTV} arrayOf="SimilarTV" />}
             {!recommendedTV.length ? <Spinner2 /> : <ArrayOfContent para={recommendedTV} arrayOf="RecommendedTV" />}
+
         </div>
     )
 }
