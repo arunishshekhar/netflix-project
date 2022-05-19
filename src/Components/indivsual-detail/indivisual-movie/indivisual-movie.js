@@ -21,7 +21,7 @@ function IndivisualMovie() {
             .then((dataFromAPI) => setRecommendedMovies(dataFromAPI.data["results"]));
         axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US`)
             .then((dataFromAPI) => setMoviesCredits(dataFromAPI.data["cast"]));
-    }, [])
+    }, [id])
 
     /*     adult: false
         backdrop_path: "/A3bsT0m1um6tvcmlIGxBwx9eAxn.jpg"
