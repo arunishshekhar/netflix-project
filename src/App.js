@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(user)}
+      {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
           <Switch>
@@ -41,6 +41,13 @@ function App() {
             <Route exact path="/browse/:id/:isMovie">
               <ProtectedRoute>
                 <IndivisualDetail />
+                {/* <VideoPlayer /> */}
+              </ProtectedRoute>
+            </Route>
+            <Route exact path="/browse/:cat">
+              <ProtectedRoute>
+                <HomePage/>
+                {/* <IndivisualDetail /> */}
                 {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>

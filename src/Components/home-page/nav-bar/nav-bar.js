@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import './Navbar.css'
 import { useCookies } from 'react-cookie';
 import { useUserAuth } from "../../../Context/UserAuthContext";
 import { useHistory } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function NavBar() {
     const [cookie, removeCookie] = useCookies(['cookie-name']);
@@ -20,18 +21,36 @@ function NavBar() {
         document.querySelector(".userDropdown").classList.toggle("show");
     }
 
+    const [value,setValue] = useState('');
+
+    function onChangeHandler (event) {
+        setValue(event.target.value)
+        if (value.length >= 2) {
+            history.push("/browse/search");     
+        }
+        else {
+            history.push("/browse/home")
+        }
+    }
+
     return (
         <div className="navbar">
-            <img className="navbar-logo" src="/Images/logo.svg" alt="logo" />
+            <Link to="/browse/home"><img className="navbar-logo" src="/Images/logo.svg" alt="logo" /></Link>
+            <div>
+                <Link to="/browse/home">Home</Link>
+                <Link to="/browse/movies">Movies</Link>
+                <Link to="/browse/tv">TV Shows</Link>
+            </div>
+            <div>
+                <input type="text" id="searchID" placeholder="What to Search" onChange={onChangeHandler} value={value}></input>
+            </div>
+
             <div className="userDropdown-container">
-                {console.log(cookie)}
                 <button onClick={myFunction} className="dropbtn">{cookie[cookie['loggedUser']]}</button>
                 <div className="userDropdown">
                     <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
                 </div>
             </div>
-
-
         </div>
     )
 }
