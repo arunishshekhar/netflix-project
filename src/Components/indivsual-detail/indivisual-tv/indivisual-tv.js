@@ -300,7 +300,7 @@ import NavBar from "../../home-page/nav-bar/nav-bar";
 }
  */
 
-function IndivisualTV () {
+function IndivisualTV() {
     const { id } = useParams();
 
     const [TVDetail, setTVDetail] = useState({})
@@ -315,7 +315,7 @@ function IndivisualTV () {
             .then((dataFromAPI) => setSimilarTV(dataFromAPI.data["results"]));
         axios.get(`https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US&page=1`)
             .then((dataFromAPI) => setRecommendedTV(dataFromAPI.data["results"]));
-       
+
     }, [id])
 
 
@@ -325,11 +325,11 @@ function IndivisualTV () {
             <VideoPlayer />
             <br />
             <div className="video-details">
-            {/* <p className = 'video-property'>Title:</p>&nbsp;&nbsp;{movieDetail.title}<br/>
-            <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{movieDetail.vote_average}<br/>
-            <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{movieDetail.release_date}<br/><br/>
-            <p className="video-property-description">"{movieDetail.overview}"</p> */}
-            {console.log(TVDetail)}
+                <p className='video-property'>Title:</p>&nbsp;&nbsp;{TVDetail.name ? TVDetail.name : TVDetail.original_name}<br />
+                <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{TVDetail.vote_average?TVDetail.vote_average:'Not Known'}<br/>
+                <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{TVDetail.first_air_date?TVDetail.first_air_date:'Not Known'}<br/><br/>
+                <p className="video-property-description">"{TVDetail.overview ? TVDetail.overview : TVDetail.tagline}"</p>
+                {console.log(TVDetail)}
             </div>
 
             {!similarTV.length ? <Spinner2 /> : <ArrayOfContent para={similarTV} arrayOf="SimilarMov" />}

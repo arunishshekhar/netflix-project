@@ -74,10 +74,10 @@ function IndivisualMovie() {
             <VideoPlayer />
             <br />
             <div className="video-details">
-            <p className = 'video-property'>Title:</p>&nbsp;&nbsp;{movieDetail.title}<br/>
-            <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{movieDetail.vote_average}<br/>
-            <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{movieDetail.release_date}<br/><br/>
-            <p className="video-property-description">"{movieDetail.overview}"</p>
+            <p className = 'video-property'>Title:</p>&nbsp;&nbsp;{movieDetail.title?movieDetail.title:'Not Known'}<br/>
+            <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{movieDetail.vote_average?movieDetail.vote_average:'Not Known'}<br/>
+            <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{movieDetail.release_date?movieDetail.release_date:'Not Known'}<br/><br/>
+            <p className="video-property-description">"{movieDetail.overview?movieDetail.overview:''}"</p>
             {console.log(movieDetail)}
             </div>
 
