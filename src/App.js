@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(user)}
+      {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
           <Switch>

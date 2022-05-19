@@ -51,10 +51,10 @@ function IndivisualMovie() {
         vote_count: 593 */
 
     // to access poster https://image.tmdb.org/t/p/w500  <= add url at end
-    console.log(movieDetail);
+    /* console.log(movieDetail);
     console.log(similarMovies);
     console.log(recommendedMovies);
-    console.log(moviesCredits);
+    console.log(moviesCredits); */
     return (
         <div>
             <h1>{movieDetail.title}</h1>

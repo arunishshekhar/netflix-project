@@ -17,13 +17,13 @@ function ContentList() {
     <div className="content-container">
       <DiscoverMovies />
       <DiscoverTVSeries />
-      <NowPlayingMovies />
-      <PopularMovies />
       <TopRatedMovies />
-      <UpcomingMovies />
       <AiringTodayTVShows />
+      <NowPlayingMovies />
       <OnAirTVShows />
+      <UpcomingMovies />
       <PopularTVShows />
+      <PopularMovies />
       <TopRatedTVShows />
     </div>
   );

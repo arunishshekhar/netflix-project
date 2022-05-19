@@ -7,6 +7,7 @@ import Footer from "../LandingPageContents/Footer";
 import { useParams } from "react-router-dom";
 import MovieOnly from "./movie-only/movie-only";
 import TVOnly from "./tv-only/tv-only";
+import SearchDisplay from "./nav-bar/search-display";
 
 function HomePage() {
     const { cat } = useParams();
@@ -17,6 +18,8 @@ function HomePage() {
             {(cat == "home") ? <ContentList /> : null}
             {(cat == "movies") ? <MovieOnly /> : null}
             {(cat == "tv") ? <TVOnly /> : null}
+            {(cat == null) ? <ContentList /> : null}
+            {(cat == "search") ? <SearchDisplay />: null}
             <Footer />
         </div>
     )

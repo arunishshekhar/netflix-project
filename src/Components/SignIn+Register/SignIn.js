@@ -23,7 +23,7 @@ function SignIn() {
             await setPassword('');
             await changeAuth(true);
             setTimeout(() => {
-                console.log(user);
+                // console.log(user);
                 history.push('/browse/home');
             }, 700)
         }
