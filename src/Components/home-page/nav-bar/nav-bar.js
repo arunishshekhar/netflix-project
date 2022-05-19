@@ -36,7 +36,7 @@ function NavBar() {
     return (
         <div className="navbar">
             <div className="navbar-left">
-                <Link to="/browse/home"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
+                <Link id = 'navbar-logo'to="/browse/home"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
                 <Link to="/browse/home">Home</Link>
                 <Link to="/browse/movies">Movies</Link>
                 <Link to="/browse/tv">TV Shows</Link>
