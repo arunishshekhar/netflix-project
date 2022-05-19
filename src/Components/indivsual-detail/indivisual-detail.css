@@ -2,4 +2,26 @@
     background-color: black;
     color:white;
     min-height: 100vh;
+    position: absolute;
+}
+
+.video-details{
+    background-color: rgb(20,20,20);
+    text-align: left;
+    max-width: 50rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+.video-details:hover{
+    opacity: 1;
+}
+.video-property{
+    color:rgb(192, 192, 192);
+    font-weight: 800;
+    display: inline-block;
+}
+.video-property-description{
+    font-style: italic;
 }

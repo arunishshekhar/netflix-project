@@ -1,4 +1,6 @@
 .fallback > img {
-  height: 20rem;
+  height: 26rem;
   width: auto;
+  padding: 3rem;
+  margin: 4.4rem 0rem;
 }

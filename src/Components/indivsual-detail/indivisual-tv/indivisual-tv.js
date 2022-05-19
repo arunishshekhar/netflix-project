@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArrayOfContent from "../../home-page/main-content/content-list/components/array-of-content";
 import Spinner2 from "../../Spinner/Spinner2";
-
+import VideoPlayer from '../../video-player/video-player'
+import NavBar from "../../home-page/nav-bar/nav-bar";
 /* 
 {
     "adult": false,
@@ -319,8 +320,21 @@ function IndivisualTV () {
 
 
     return (
-        <div>
-            
+        <div className="individual-detail-main">
+            <NavBar />
+            <VideoPlayer />
+            <br />
+            <div className="video-details">
+            {/* <p className = 'video-property'>Title:</p>&nbsp;&nbsp;{movieDetail.title}<br/>
+            <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{movieDetail.vote_average}<br/>
+            <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{movieDetail.release_date}<br/><br/>
+            <p className="video-property-description">"{movieDetail.overview}"</p> */}
+            {console.log(TVDetail)}
+            </div>
+
+            {!similarTV.length ? <Spinner2 /> : <ArrayOfContent para={similarTV} arrayOf="SimilarMov" />}
+            {!recommendedTV.length ? <Spinner2 /> : <ArrayOfContent para={recommendedTV} arrayOf="RecommendedMovies" />}
+
         </div>
     )
 }

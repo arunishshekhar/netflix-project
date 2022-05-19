@@ -6,6 +6,7 @@ import ArrayOfContent from "../../home-page/main-content/content-list/components
 import Spinner2 from "../../Spinner/Spinner2";
 import '../indivisual-detail.css';
 import VideoPlayer from '../../video-player/video-player'
+import NavBar from "../../home-page/nav-bar/nav-bar";
 
 function IndivisualMovie() {
     const { id } = useParams();
@@ -24,7 +25,7 @@ function IndivisualMovie() {
                 // setPosterLink(posterLink + dataFromAPI.data.poster_path)
                 // console.log(posterLink);
             })
-         
+
         axios.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US&page=1`)
             .then((dataFromAPI) => setSimilarMovies(dataFromAPI.data["results"]));
         axios.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US&page=1`)
@@ -33,7 +34,8 @@ function IndivisualMovie() {
             .then((dataFromAPI) => setMoviesCredits(dataFromAPI.data["cast"]));
     }, [id])
 
-    /*     adult: false
+    /*  
+        adult: false
         backdrop_path: "/A3bsT0m1um6tvcmlIGxBwx9eAxn.jpg"
         belongs_to_collection: null
         budget: 74000000
@@ -57,26 +59,30 @@ function IndivisualMovie() {
         title: "The Lost City"
         video: false
         vote_average: 6.7
-        vote_count: 593 */
+        vote_count: 593 
+    */
 
     // to access poster https://image.tmdb.org/t/p/w500  <= add url at end
     // console.log(movieDetail);
     // console.log(similarMovies);
     // console.log(recommendedMovies);
     // console.log(moviesCredits);
+
     return (
         <div className="individual-detail-main">
-            <div className='loginPage-logo'>
-                <Link to='/'><img className="logo" src="/Images/logo.svg" alt="logo" /></Link>
-                </div>
-            <h1>
-                {movieDetail.title}
-                <VideoPlayer/>
-                
-            </h1>
+            <NavBar />
+            <VideoPlayer />
+            <br />
+            <div className="video-details">
+            <p className = 'video-property'>Title:</p>&nbsp;&nbsp;{movieDetail.title}<br/>
+            <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{movieDetail.vote_average}<br/>
+            <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{movieDetail.release_date}<br/><br/>
+            <p className="video-property-description">"{movieDetail.overview}"</p>
+            {console.log(movieDetail)}
+            </div>
+
             {!similarMovies.length ? <Spinner2 /> : <ArrayOfContent para={similarMovies} arrayOf="SimilarMov" />}
             {!recommendedMovies.length ? <Spinner2 /> : <ArrayOfContent para={recommendedMovies} arrayOf="RecommendedMovies" />}
-
 
         </div>
     )
