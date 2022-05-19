@@ -4,14 +4,16 @@ import IndivisualMovie from "./indivisual-movie/indivisual-movie";
 import IndivisualTV from "./indivisual-tv/indivisual-tv";
 
 function IndivisualDetail() {
-    
+
     const { id, isMovie } = useParams();
     
-    (isMovie == 'true')
-    ?
-    return <IndivisualMovie props={id} />
-    :
-    return <IndivisualTV props={id} />
+    return (
+        (isMovie == 'true')
+            ?
+            <IndivisualMovie props={id} />
+            :
+            <IndivisualTV props={id} />
+    )
 }
 
 export default IndivisualDetail;
