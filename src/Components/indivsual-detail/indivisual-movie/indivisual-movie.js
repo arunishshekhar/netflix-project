@@ -1,15 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ArrayOfContent from "../../home-page/main-content/content-list/components/array-of-content";
 
 function IndivisualMovie() {
     const { id } = useParams();
 
     const [movieDetail, setMovieDetail] = useState({})
+    const [similarMovies, setSimilarMovies] = useState({})
+    const [recommendedMovies ,setRecommendedMovies] = useState({})
 
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US`)
-            .then((dataFromAPI) => setMovieDetail(dataFromAPI.data))
+            .then((dataFromAPI) => setMovieDetail(dataFromAPI.data));
+        axios.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US&page=1`)
+            .then((dataFromAPI) => setSimilarMovies(dataFromAPI.data["results"]));
+        axios.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US&page=1`)
+            .then((dataFromAPI) => setRecommendedMovies(dataFromAPI.data["results"]));
     },[])
 
 /*     adult: false
@@ -40,8 +47,15 @@ function IndivisualMovie() {
 
     // to access poster https://image.tmdb.org/t/p/w500  <= add url at end
     console.log(movieDetail);
+    console.log(similarMovies);
+    console.log(recommendedMovies);
+
     return (
-        <h1>I AM MOVIE</h1>
+        <div>
+            <h1>I AM MOVIE</h1>
+        <ArrayOfContent para={similarMovies} arrayOf="SimilarMov"/>
+        <ArrayOfContent para={recommendedMovies} arrayOf="RecommendedMovies"/>
+        </div>
     )
 }
 
