@@ -5,9 +5,9 @@ import IndivisualMovie from "./indivisual-movie/indivisual-movie";
 import IndivisualTV from "./indivisual-tv/indivisual-tv";
 
 function IndivisualDetail() {
-    console.log(useParams());
+    
     const { id, isMovie } = useParams();
-    console.log(isMovie)
+
     if (isMovie == 'true') {
         return <IndivisualMovie props={id} />
     }
