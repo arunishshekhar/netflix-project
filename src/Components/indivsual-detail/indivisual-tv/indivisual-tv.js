@@ -299,13 +299,13 @@ import Spinner2 from "../../Spinner/Spinner2";
 }
  */
 
-function IndivisualTV () {
+function IndivisualTV() {
     const { id } = useParams();
 
     const [TVDetail, setTVDetail] = useState({})
     const [similarTV, setSimilarTV] = useState({})
     const [recommendedTV, setRecommendedTV] = useState({})
-    // const [moviesCredits, setMoviesCredits] = useState({})
+    const [TVCredits, setTVCredits] = useState({})
 
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US`)
@@ -314,13 +314,17 @@ function IndivisualTV () {
             .then((dataFromAPI) => setSimilarTV(dataFromAPI.data["results"]));
         axios.get(`https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US&page=1`)
             .then((dataFromAPI) => setRecommendedTV(dataFromAPI.data["results"]));
-       
+        axios.get(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=699d72b2d0f1ce6766155aaf0e374b66&language=en-US`)
+            .then((dataFromAPI) => setTVCredits(dataFromAPI.data["cast"]))
+
     }, [id])
 
 
     return (
         <div>
-            
+            <h1>{TVDetail.name}</h1>
+            {!similarTV.length ? <Spinner2 /> : <ArrayOfContent para={similarTV} arrayOf="SimilarTV" />}
+            {!recommendedTV.length ? <Spinner2 /> : <ArrayOfContent para={recommendedTV} arrayOf="RecommendedTV" />}
         </div>
     )
 }
