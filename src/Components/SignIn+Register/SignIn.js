@@ -24,7 +24,7 @@ function SignIn() {
             await changeAuth(true);
             setTimeout(() => {
                 console.log(user);
-                history.push('/browse');
+                history.push('/browse/home');
             }, 700)
         }
         catch (err) {

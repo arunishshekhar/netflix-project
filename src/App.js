@@ -44,6 +44,13 @@ function App() {
                 {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>
+            <Route exact path="/browse/:cat">
+              <ProtectedRoute>
+                <HomePage/>
+                {/* <IndivisualDetail /> */}
+                {/* <VideoPlayer /> */}
+              </ProtectedRoute>
+            </Route>
           </Switch>
         </Router>
       </UserAuthContextProvider>

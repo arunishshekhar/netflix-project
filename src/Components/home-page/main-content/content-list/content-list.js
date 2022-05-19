@@ -14,7 +14,7 @@ import './content-list.css'
 
 function ContentList() {
   return (
-    <div className="movies-container">
+    <div className="content-container">
       <DiscoverMovies />
       <DiscoverTVSeries />
       <NowPlayingMovies />
