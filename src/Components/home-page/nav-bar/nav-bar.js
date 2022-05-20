@@ -13,15 +13,9 @@ function NavBar() {
     function handleSignOut() {
         removeCookie('loggedUser');
         logOut();
-        setTimeout(() => {
-            history.push('/');
-            window.location.reload();
-        },2000)
+        history.push('/');
+        window.location.reload();
         console.log(cookie);
-    }
-
-    function drop() {
-        document.querySelector(".userDropdown").classList.toggle("show");
     }
 
     const [value, setValue] = useState('');
@@ -39,20 +33,20 @@ function NavBar() {
     return (
         <div className="navbar">
             <div className="navbar-left">
-                <Link id = 'navbar-logo'to="/browse"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
+                <Link id='navbar-logo' to="/browse"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
                 <div className="navbar-categories">
-                <Link to="/browse">Home</Link>
-                <Link to="/browse/movies">Movies</Link>
-                <Link to="/browse/tv">TV Shows</Link>
+                    <Link to="/browse">Home</Link>
+                    <Link to="/browse/movies">Movies</Link>
+                    <Link to="/browse/tv">TV Shows</Link>
                 </div>
             </div>
 
             <div className="navbar-right">
-                <input className= 'search-bar'type="text" id="searchID" placeholder='Search' onChange={onChangeHandler} value={value} /><br/>
-                <div className="userDropdown-container">
-                    <button onClick={drop} className="dropbtn">{cookie[cookie['loggedUser']]?cookie[cookie['loggedUser']]:'Profile'}</button>
-                    <div className="userDropdown">
-                        <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
+                <input className='search-bar' type="text" id="searchID" placeholder='Search' onChange={onChangeHandler} value={value} /><br />
+                <div class="popover__wrapper">
+                    <button className="dropbtn">{cookie[cookie['loggedUser']] ? cookie[cookie['loggedUser']] : 'Profile'}</button>
+                    <div class="popover__content" onClick={handleSignOut}>
+                        Sign Out
                     </div>
                 </div>
             </div>
