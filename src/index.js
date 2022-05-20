@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import HomePage from './Components/home-page/home-page';
 import Fallback from './Components/FallbackPage/Fallback';
+import Payments from './Components/Payments/Payments';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -15,6 +16,7 @@ const root = createRoot(container);
 root.render(
       <App/> 
      //<HomePage/>
+//      <Payments/>
      
 );
 
