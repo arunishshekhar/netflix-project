@@ -10,6 +10,16 @@ function NavBar() {
     const { logOut } = useUserAuth();
     const history = useHistory();
 
+    const myNav = document.querySelector('.navbar');
+    window.onscroll = function() {
+        "use strict";
+        if (document.body.scrollTop >= 350 || document.documentElement.scrollTop >= 350) {
+          myNav.classList.add("scroll");
+        } else {
+          myNav.classList.remove("scroll");
+        }
+      };
+
     function handleSignOut() {
         removeCookie('loggedUser');
         logOut();
