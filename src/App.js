@@ -10,6 +10,8 @@ import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
 
+import AdminController from "./Components/admin-controller/admin-controller";
+
 
 function App() {
   const [cookie] = useCookies(['cookie-name']);
@@ -31,6 +33,7 @@ function App() {
             </Route>
             <Route exact path="/login"> <SignIn /></Route>
             <Route exact path="/signUp"><SignUp /></Route>
+            <Route exact path="/admin"><AdminController/></Route>
             <Route exact path="/browse">
               <ProtectedRoute>
                 <HomePage />
