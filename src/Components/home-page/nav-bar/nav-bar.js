@@ -14,7 +14,7 @@ function NavBar() {
         logOut();
         removeCookie('loggedUser');
         history.push('/');
-        // window.location.reload(false);
+        window.location.reload();
     }
 
     function myFunction() {

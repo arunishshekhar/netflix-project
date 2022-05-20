@@ -7,15 +7,16 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import SignIn from "./Components/SignIn+Register/SignIn";
 import SignUp from "./Components/SignIn+Register/SignUp";
-import { UserAuthContextProvider } from "./Context/UserAuthContext";
+import { UserAuthContextProvider, useUserAuth } from "./Context/UserAuthContext";
 import VideoPlayer from "./Components/video-player/video-player";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
 // import Firebase from './firebase';
 
 function App() {
   const [cookies, removeCookie] = useCookies(['cookie-name']);
-  const user = cookies;
+    // let { user } = useUserAuth();
   // Firebase.database().ref('/').set('hello');
+
   return (
     <div className="App">
 
@@ -25,7 +26,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               {
-                (!user.loggedUser || user.loggedUser == 'undefined')
+                (cookies['loggedUser'] && cookies['loggedUser'] != 'undefined')
                   ?
                   <LandingPage />
                   :
