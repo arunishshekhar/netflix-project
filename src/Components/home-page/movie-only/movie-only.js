@@ -9,7 +9,7 @@ import './movies-only.css'
 
 function MovieOnly() {
   return (
-    <div className="movies-container">
+    <div className="movies-container" style={{width:'100vw'}}>
       <DiscoverMovies />
       <NowPlayingMovies />
       <UpcomingMovies />

@@ -1,35 +1,28 @@
 .homepage-poster {
-
-    position: relative;
-    /* background-image: url('/public/Images/home-page-cover2.webp'); */
-    /* background-repeat: no-repeat; */
-    background: rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(
-      to top,
-      rgba(0, 0, 0, .5) 0,
-      rgba(0, 0, 0, 0) 60%,
-      rgba(0, 0, 0, 0.8) 100%
-      
-    );
-    height: 70vh;
-    
+    background-color: black;
+    width: 100vw;
+    height: 60vh;
 }
 
-
-.cover-page-image {
+.homepage-poster video{
+    width: 100%;
+    /* height: 100%; */
+    transform:translateY(-2.2rem);
     position: absolute;
-    z-index: -1;
-    width: 100%;
-    height:fit-height;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
-.cover-page-image img{ 
-   
-    width: 100%;
-    height: auto;
+@media only screen and (max-autowidth: 1100px) {
+    .homepage-poster{
+        height: 30vh;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .homepage-poster {
+        display: none;
+        height: 12vh;
+    }
 }
 
-.cover-page-image video{
-    z-index: -1;
-    width: 100%;
-}

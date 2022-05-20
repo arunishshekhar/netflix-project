@@ -1,14 +1,14 @@
 
 .footer{
     border-top: 8px solid #222;
-
     background:black;
     color: #757575;
     text-align: left;
     padding:1rem;
     display:flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center; 
+    max-width: 100vw;   
 }
 .footer a{
     text-decoration: none;
@@ -23,14 +23,11 @@
 
 .footer-nav{
     display:flex;
-    /* justify-content:space-evenly; */
     font-size:13px;
 }
 
 .footer-top{
     margin: 0 0 15px;
-    
-
 }
 
 .sub-footer-nav{

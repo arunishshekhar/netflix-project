@@ -16,9 +16,10 @@ import AdminController from "./Components/admin-controller/admin-controller";
 function App() {
   const [cookies, removeCookie] = useCookies(['cookie-name']);
   const user = cookies;
-
+  // Firebase.database().ref('/').set('hello');
   return (
     <div className="App">
+
       {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
@@ -48,7 +49,7 @@ function App() {
             </Route>
             <Route exact path="/browse/:cat">
               <ProtectedRoute>
-                <HomePage/>
+                <HomePage />
                 {/* <IndivisualDetail /> */}
                 {/* <VideoPlayer /> */}
               </ProtectedRoute>
