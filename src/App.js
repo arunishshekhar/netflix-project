@@ -7,26 +7,22 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import SignIn from "./Components/SignIn+Register/SignIn";
 import SignUp from "./Components/SignIn+Register/SignUp";
-import { UserAuthContextProvider, useUserAuth } from "./Context/UserAuthContext";
-import VideoPlayer from "./Components/video-player/video-player";
+import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
-// import Firebase from './firebase';
+
 
 function App() {
-  const [cookies, removeCookie] = useCookies(['cookie-name']);
-    // let { user } = useUserAuth();
-  // Firebase.database().ref('/').set('hello');
+  const [cookie] = useCookies(['cookie-name']);
+  console.log(cookie);
 
   return (
     <div className="App">
-
-      {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
           <Switch>
             <Route exact path="/">
               {
-                (cookies['loggedUser'] && cookies['loggedUser'] != 'undefined')
+                (!cookie['loggedUser'] || cookie['loggedUser'] == 'undefined')
                   ?
                   <LandingPage />
                   :
@@ -43,14 +39,11 @@ function App() {
             <Route exact path="/browse/:id/:isMovie">
               <ProtectedRoute>
                 <IndivisualDetail />
-                {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>
             <Route exact path="/browse/:cat">
               <ProtectedRoute>
                 <HomePage />
-                {/* <IndivisualDetail /> */}
-                {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>
           </Switch>

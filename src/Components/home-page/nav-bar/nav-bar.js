@@ -6,15 +6,19 @@ import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 function NavBar() {
+    // const [cookie, removeCookie] = useCookies(['cookie-name']);
     const [cookie, removeCookie] = useCookies(['cookie-name']);
     const { logOut } = useUserAuth();
     const history = useHistory();
-    const user = cookie['loggedUser'];
+
     function handleSignOut() {
-        logOut();
         removeCookie('loggedUser');
-        history.push('/');
-        window.location.reload();
+        logOut();
+        setTimeout(() => {
+            history.push('/');
+            window.location.reload();
+        },2000)
+        console.log(cookie);
     }
 
     function myFunction() {
@@ -29,16 +33,16 @@ function NavBar() {
             history.push("/browse/search");
         }
         else {
-            history.push("/browse/home")
+            history.push("/browse")
         }
     }
 
     return (
         <div className="navbar">
             <div className="navbar-left">
-                <Link id = 'navbar-logo'to="/browse/home"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
+                <Link id = 'navbar-logo'to="/browse"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
                 <div className="navbar-categories">
-                <Link to="/browse/home">Home</Link>
+                <Link to="/browse">Home</Link>
                 <Link to="/browse/movies">Movies</Link>
                 <Link to="/browse/tv">TV Shows</Link>
                 </div>
@@ -47,7 +51,7 @@ function NavBar() {
             <div className="navbar-right">
                 <input className= 'search-bar'type="text" id="searchID" placeholder='Search' onChange={onChangeHandler} value={value} /><br/>
                 <div className="userDropdown-container">
-                    <button onClick={myFunction} className="dropbtn">{cookie[cookie['loggedUser']]?cookie[cookie['loggedUser']]:'Profile'}</button>
+                    <button onClick={myFunction} className="dropbtn">{'Profile'}</button>
                     <div className="userDropdown">
                         <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
                     </div>

@@ -19,12 +19,12 @@ function SignIn() {
         try {
             await logIn(email, password);
             setCookie('loggedUser', email);
-            await setEmail('');
-            await setPassword('');
-            await changeAuth(true);
+            setEmail('');
+            setPassword('');
+            changeAuth(true);
+            console.log(cookie);
             setTimeout(() => {
-                // console.log(user);
-                history.push('/browse/home');
+                history.push('/browse');
             }, 700)
         }
         catch (err) {
