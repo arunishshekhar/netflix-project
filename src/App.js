@@ -11,10 +11,11 @@ import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
 
 import AdminController from "./Components/admin-controller/admin-controller";
+import Payments from "./Components/Payments/Payments";
 
 
 function App() {
-  const [cookie] = useCookies(['cookie-name']);
+  const [cookie, setCookie] = useCookies(['cookie-name']);
   console.log(cookie);
 
   return (
@@ -32,7 +33,10 @@ function App() {
               }
             </Route>
             <Route exact path="/login"> <SignIn /></Route>
-            <Route exact path="/signUp"><SignUp /></Route>
+            <Route exact path="/signUp">
+              {/* <SignUp /> */}
+              <Payments/>
+              </Route>
             <Route exact path="/admin"><AdminController/></Route>
             <Route exact path="/browse">
               <ProtectedRoute>
