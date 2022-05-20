@@ -9,7 +9,7 @@ function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
-    const { user, logIn } = useUserAuth();
+    const { logIn } = useUserAuth();
     const history = useHistory();
     const [auth, changeAuth] = useState('false');
 

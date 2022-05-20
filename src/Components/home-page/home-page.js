@@ -14,7 +14,9 @@ function HomePage() {
     
     const { cat } = useParams();
     const [cookie] = useCookies(['cookie-name']);
+
     console.log(cookie);
+    
     return (
         <div className="homepage">
             <NavBar />

@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 function NavBar() {
-    // const [cookie, removeCookie] = useCookies(['cookie-name']);
     const [cookie, removeCookie] = useCookies(['cookie-name']);
     const { logOut } = useUserAuth();
     const history = useHistory();
@@ -21,7 +20,7 @@ function NavBar() {
         console.log(cookie);
     }
 
-    function myFunction() {
+    function drop() {
         document.querySelector(".userDropdown").classList.toggle("show");
     }
 
@@ -51,7 +50,7 @@ function NavBar() {
             <div className="navbar-right">
                 <input className= 'search-bar'type="text" id="searchID" placeholder='Search' onChange={onChangeHandler} value={value} /><br/>
                 <div className="userDropdown-container">
-                    <button onClick={myFunction} className="dropbtn">{'Profile'}</button>
+                    <button onClick={drop} className="dropbtn">{cookie[cookie['loggedUser']]?cookie[cookie['loggedUser']]:'Profile'}</button>
                     <div className="userDropdown">
                         <div className="userDropdown-content" onClick={handleSignOut}>Sign Out</div>
                     </div>
