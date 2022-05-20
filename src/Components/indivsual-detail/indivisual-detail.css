@@ -1,0 +1,28 @@
+.individual-detail-main {
+    background-color: black;
+    color:white;
+    min-height: 100vh;
+    position: absolute;
+    max-width: 100vw;
+}
+
+.video-details{
+    background-color: rgb(39, 39, 39);
+    text-align: left;
+    max-width: 50rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+.video-details:hover{
+    opacity: 1;
+}
+.video-property{
+    color:rgb(196, 195, 195);
+    font-weight: 800;
+    display: inline-block;
+}
+.video-property-description{
+    font-style: italic;
+}

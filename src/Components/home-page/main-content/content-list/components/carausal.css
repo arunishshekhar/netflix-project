@@ -16,8 +16,9 @@
 }
 
 .track {
-    transform: translateX("-10px");
     transition: 0.3s;
+    width: 100%;
+
 }
 
 .carausal-container .card-container {
@@ -57,6 +58,8 @@
     display: block;
     flex: 1 1 0px;
     transition: transform 500ms;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .track:focus-within .card,

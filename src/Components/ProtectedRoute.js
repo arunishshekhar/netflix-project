@@ -1,16 +1,13 @@
-import React from 'react'
-import { useUserAuth } from '../Context/UserAuthContext'
 import { useHistory } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
 
 function ProtectedRoute({ children }) {
-    const [cookies, removeCookie] = useCookies(['cookie-name']);
-    let { user } = useUserAuth();
+    const [cookie, removeCookie] = useCookies(['cookie-name']);
     let history = useHistory();
-    if (user || (cookies['loggedUser'] && cookies['loggedUser'] != 'undefined'))
-        return children;
-    return history.push('/');
+    if (!cookie['loggedUser'] || cookie['loggedUser'] == 'undefined')
+        return history.push('/');
+    return children;
 }
 
 export default ProtectedRoute

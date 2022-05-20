@@ -1,9 +1,9 @@
-.movies-container{
-        background: #141414;
+.content-container{
+        background: black;
         color:white
 }
 
-.movies-container h2{
+.content-container h2{
         text-align: left;
 }
 
