@@ -26,7 +26,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getDatabase();
 
 // //Write
 // set(ref(db,'tarun'),{
