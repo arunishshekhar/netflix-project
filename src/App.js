@@ -8,25 +8,23 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import SignIn from "./Components/SignIn+Register/SignIn";
 import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
-import VideoPlayer from "./Components/video-player/video-player";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
+
 import AdminController from "./Components/admin-controller/admin-controller";
 
 
 function App() {
-  const [cookies, removeCookie] = useCookies(['cookie-name']);
-  const user = cookies;
-  // Firebase.database().ref('/').set('hello');
+  const [cookie] = useCookies(['cookie-name']);
+  console.log(cookie);
+
   return (
     <div className="App">
-
-      {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
           <Switch>
             <Route exact path="/">
               {
-                (!user.loggedUser || user.loggedUser == 'undefined')
+                (!cookie['loggedUser'] || cookie['loggedUser'] == 'undefined')
                   ?
                   <LandingPage />
                   :
@@ -44,14 +42,11 @@ function App() {
             <Route exact path="/browse/:id/:isMovie">
               <ProtectedRoute>
                 <IndivisualDetail />
-                {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>
             <Route exact path="/browse/:cat">
               <ProtectedRoute>
                 <HomePage />
-                {/* <IndivisualDetail /> */}
-                {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>
           </Switch>
