@@ -10,14 +10,15 @@ import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import VideoPlayer from "./Components/video-player/video-player";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
-
+// import Firebase from './firebase';
 
 function App() {
   const [cookies, removeCookie] = useCookies(['cookie-name']);
   const user = cookies;
-
+  // Firebase.database().ref('/').set('hello');
   return (
     <div className="App">
+
       {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
@@ -46,7 +47,7 @@ function App() {
             </Route>
             <Route exact path="/browse/:cat">
               <ProtectedRoute>
-                <HomePage/>
+                <HomePage />
                 {/* <IndivisualDetail /> */}
                 {/* <VideoPlayer /> */}
               </ProtectedRoute>

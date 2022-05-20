@@ -14,7 +14,7 @@ function NavBar() {
         logOut();
         removeCookie('loggedUser');
         history.push('/');
-        window.location.reload(false);
+        // window.location.reload(false);
     }
 
     function myFunction() {
@@ -37,9 +37,11 @@ function NavBar() {
         <div className="navbar">
             <div className="navbar-left">
                 <Link id = 'navbar-logo'to="/browse/home"><img className="navbar-logo" src="/Images/logo.svg" /></Link>
+                <div className="navbar-categories">
                 <Link to="/browse/home">Home</Link>
                 <Link to="/browse/movies">Movies</Link>
                 <Link to="/browse/tv">TV Shows</Link>
+                </div>
             </div>
 
             <div className="navbar-right">
