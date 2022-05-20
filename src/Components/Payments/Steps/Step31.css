@@ -1,0 +1,52 @@
+.step-3{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+
+.plans-selector{
+    padding-top:30px;
+    display:flex;
+    justify-content:space-around;
+}
+.plans-choice{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    /* border:none;
+    padding:0;
+    appearance: none;
+    -webkit-appearance:none; */
+    width: 120px;
+    height: 120px;
+    background-color: #e50914;
+    /* opacity: 0; */
+    color:white;
+
+
+}
+
+.plans-choice > input[type='radio']{
+    visibility: hidden;  
+     position: absolute; 
+}
+
+.plans-choice{ 
+    cursor:pointer;
+    /* border:2px solid transparent; */
+    opacity:.5;
+}
+
+.selected{
+    opacity:1;
+}
+
+.step-btn-plan-select{
+    margin-top:30px;
+    width: 100%;
+}
+
+
