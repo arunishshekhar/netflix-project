@@ -15,7 +15,7 @@ function SearchDisplay () {
     })
 
 
-    return (<div>
+    return (<div  style={{width:'100vw'}}>
         {!dataToDisplay.length?<Spinner2/>:<ArrayOfContent para={dataToDisplay} arrayOf="SearchRes"/>}
     </div>
     )

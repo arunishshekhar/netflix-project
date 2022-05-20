@@ -15,11 +15,13 @@ function HomePage() {
         <div className="homepage">
             <NavBar />
             <MovieSnippet />
-            {(cat == "home") ? <ContentList /> : null}
-            {(cat == "movies") ? <MovieOnly /> : null}
-            {(cat == "tv") ? <TVOnly /> : null}
-            {(cat == null) ? <ContentList /> : null}
-            {(cat == "search") ? <SearchDisplay />: null}
+            <div className="homepage-contents">
+                {(cat == "home") ? <ContentList /> : null}
+                {(cat == "movies") ? <MovieOnly /> : null}
+                {(cat == "tv") ? <TVOnly /> : null}
+                {(cat == null) ? <ContentList /> : null}
+                {(cat == "search") ? <SearchDisplay /> : null}
+            </div>
             <Footer />
         </div>
     )

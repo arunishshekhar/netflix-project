@@ -9,7 +9,7 @@ import './tv-only.css'
 
 function TVOnly() {
   return (
-    <div className="tv-only-container">
+    <div className="tv-only-container" style={{width:'100vw'}}>
       <DiscoverTVSeries />
       <AiringTodayTVShows />
       <OnAirTVShows />
