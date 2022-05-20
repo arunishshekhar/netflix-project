@@ -1,0 +1,57 @@
+.step1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 10px;
+    max-width: 440px;
+    height:80vh;
+    text-align: center;
+    margin:auto;
+    /* line-height:50px; */
+    
+
+}
+.step-track{
+
+    color:rgba(77, 74, 74, 0.717);
+    padding: 10px;
+}
+.step1 .step-desc,.step-title{
+    padding:10px;
+
+}
+
+.step-desc{
+    
+}
+
+.bg-container{
+    /* display: inline-block; */
+   
+}
+
+.bg-container{
+    background: url(/public/Images/Devices.png) no-repeat 50% 50%;
+    height: 90px;
+    background-size: 260px;
+
+}
+
+.step-btn {
+    background-color: #e50914;
+    cursor: pointer;
+    color:white;
+    padding: 1rem;
+    font-size:1.5rem;
+    font-weight: 500;
+}
+
+
+
+@media screen and (min-width:900px) {
+
+    .step1{
+    max-width:500px;
+}
+}
