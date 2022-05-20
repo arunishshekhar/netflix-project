@@ -9,6 +9,7 @@ import SignIn from "./Components/SignIn+Register/SignIn";
 import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import VideoPlayer from "./Components/video-player/video-player";
+import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(user)}
+      {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
           <Switch>
@@ -37,9 +38,17 @@ function App() {
                 <HomePage />
               </ProtectedRoute>
             </Route>
-            <Route exact path="/browse/:id">
+            <Route exact path="/browse/:id/:isMovie">
               <ProtectedRoute>
-                <VideoPlayer />
+                <IndivisualDetail />
+                {/* <VideoPlayer /> */}
+              </ProtectedRoute>
+            </Route>
+            <Route exact path="/browse/:cat">
+              <ProtectedRoute>
+                <HomePage/>
+                {/* <IndivisualDetail /> */}
+                {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>
           </Switch>

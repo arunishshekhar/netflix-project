@@ -25,7 +25,7 @@ function ArrayOfContent(props) {
                 <div className="track" id={props.arrayOf}>
                     {props.para.map((indiContent) => (indiContent.backdrop_path) ?
 
-                        <Link to={`/browse/${indiContent.id}`}><IndivisualContent para={indiContent} key={indiContent.id} /></Link> : null)}
+                        <Link to={`/browse/${indiContent.id}/${Boolean(indiContent["release_date"])}`}><IndivisualContent para={indiContent} key={indiContent.id} /></Link> : null)}
 
                 </div>
             </div>

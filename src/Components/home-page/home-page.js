@@ -4,14 +4,23 @@ import MovieSnippet from "./main-content/content-snippet/MovieSnippet";
 import ContentList from "./main-content/content-list/content-list";
 import './Homepage.css';
 import Footer from "../LandingPageContents/Footer";
+import { useParams } from "react-router-dom";
+import MovieOnly from "./movie-only/movie-only";
+import TVOnly from "./tv-only/tv-only";
+import SearchDisplay from "./nav-bar/search-display";
 
-function HomePage () {
+function HomePage() {
+    const { cat } = useParams();
     return (
         <div className="homepage">
-            <NavBar/>
-            <MovieSnippet/>
-            <ContentList/>
-            <Footer/>
+            <NavBar />
+            <MovieSnippet />
+            {(cat == "home") ? <ContentList /> : null}
+            {(cat == "movies") ? <MovieOnly /> : null}
+            {(cat == "tv") ? <TVOnly /> : null}
+            {(cat == null) ? <ContentList /> : null}
+            {(cat == "search") ? <SearchDisplay />: null}
+            <Footer />
         </div>
     )
 }
