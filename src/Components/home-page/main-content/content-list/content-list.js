@@ -14,7 +14,7 @@ import './content-list.css'
 
 function ContentList() {
   return (
-    <div className="content-container">
+    <div className="content-container" style={{width:'100vw'}}>
       <DiscoverMovies />
       <DiscoverTVSeries />
       <TopRatedMovies />

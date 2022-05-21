@@ -1,0 +1,27 @@
+.nav-signup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.402);
+    padding: 1rem;
+}
+.login-signUp-btn{
+       
+       font-size:1rem;
+       font-weight:bold;
+       background-color:white;
+}
+
+#logo{
+
+    width:100px;
+    height:auto;
+}
+
+@media screen and (min-width:900px){
+    #logo{
+
+        width:200px;
+        height:auto;
+    }
+}

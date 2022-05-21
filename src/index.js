@@ -1,19 +1,22 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-// import { Provider } from 'react-redux';
-// import { store } from './app/store';
-
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import HomePage from './Components/home-page/home-page';
+import Fallback from './Components/FallbackPage/Fallback';
+import Payments from './Components/Payments/Payments';
+import { CookiesProvider } from 'react-cookie';
+import PaymentStatus from './Components/Payments/PaymentStatus';
+
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-      <App/> 
-     //<HomePage/>
+      <CookiesProvider>
+            <App />
+      </CookiesProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

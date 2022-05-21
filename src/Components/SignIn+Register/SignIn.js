@@ -9,7 +9,7 @@ function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
-    const { user, logIn } = useUserAuth();
+    const { logIn } = useUserAuth();
     const history = useHistory();
     const [auth, changeAuth] = useState('false');
 
@@ -19,12 +19,12 @@ function SignIn() {
         try {
             await logIn(email, password);
             setCookie('loggedUser', email);
-            await setEmail('');
-            await setPassword('');
-            await changeAuth(true);
+            setEmail('');
+            setPassword('');
+            changeAuth(true);
+            console.log(cookie);
             setTimeout(() => {
-                // console.log(user);
-                history.push('/browse/home');
+                history.push('/browse');
             }, 700)
         }
         catch (err) {

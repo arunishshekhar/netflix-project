@@ -1,11 +1,9 @@
 .fallback{
   height: 26rem;
   width: 100vw;
-  margin: 5rem;
 }
 .fallback > img {
   width: auto;
   height: 100%;
   padding: 3rem;
-  margin: 4.4rem 0rem;
 }

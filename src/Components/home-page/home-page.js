@@ -8,18 +8,26 @@ import { useParams } from "react-router-dom";
 import MovieOnly from "./movie-only/movie-only";
 import TVOnly from "./tv-only/tv-only";
 import SearchDisplay from "./nav-bar/search-display";
+import { useCookies } from "react-cookie";
 
 function HomePage() {
+    
     const { cat } = useParams();
+    const [cookie] = useCookies(['cookie-name']);
+
+    console.log(cookie);
+    
     return (
         <div className="homepage">
             <NavBar />
             <MovieSnippet />
-            {(cat == "home") ? <ContentList /> : null}
-            {(cat == "movies") ? <MovieOnly /> : null}
-            {(cat == "tv") ? <TVOnly /> : null}
-            {(cat == null) ? <ContentList /> : null}
-            {(cat == "search") ? <SearchDisplay />: null}
+            <div className="homepage-contents">
+                {(cat == "home") ? <ContentList /> : null}
+                {(cat == "movies") ? <MovieOnly /> : null}
+                {(cat == "tv") ? <TVOnly /> : null}
+                {(cat == null) ? <ContentList /> : null}
+                {(cat == "search") ? <SearchDisplay /> : null}
+            </div>
             <Footer />
         </div>
     )

@@ -6,25 +6,24 @@ import HomePage from "./Components/home-page/home-page";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import SignIn from "./Components/SignIn+Register/SignIn";
-import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
-import VideoPlayer from "./Components/video-player/video-player";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
-
+import AdminController from "./Components/admin-controller/admin-controller";
+import Payments from "./Components/Payments/Payments";
+import PaymentStatus from "./Components/Payments/PaymentStatus";
 
 function App() {
-  const [cookies, removeCookie] = useCookies(['cookie-name']);
-  const user = cookies;
+  const [cookie, setCookie] = useCookies(['cookie-name']);
+  console.log(cookie);
 
   return (
     <div className="App">
-      {/* {console.log(user)} */}
       <UserAuthContextProvider>
         <Router>
           <Switch>
             <Route exact path="/">
               {
-                (!user.loggedUser || user.loggedUser == 'undefined')
+                (!cookie['loggedUser'] || cookie['loggedUser'] == 'undefined')
                   ?
                   <LandingPage />
                   :
@@ -32,7 +31,10 @@ function App() {
               }
             </Route>
             <Route exact path="/login"> <SignIn /></Route>
-            <Route exact path="/signUp"><SignUp /></Route>
+            <Route exact path="/signUp">
+              <Payments />
+            </Route>
+            <Route exact path="/admin"><AdminController /></Route>
             <Route exact path="/browse">
               <ProtectedRoute>
                 <HomePage />
@@ -41,14 +43,16 @@ function App() {
             <Route exact path="/browse/:id/:isMovie">
               <ProtectedRoute>
                 <IndivisualDetail />
-                {/* <VideoPlayer /> */}
               </ProtectedRoute>
             </Route>
             <Route exact path="/browse/:cat">
               <ProtectedRoute>
-                <HomePage/>
-                {/* <IndivisualDetail /> */}
-                {/* <VideoPlayer /> */}
+                <HomePage />
+              </ProtectedRoute>
+            </Route>
+            <Route exact path='/paymentStatus'>
+              <ProtectedRoute>
+                <PaymentStatus />
               </ProtectedRoute>
             </Route>
           </Switch>
