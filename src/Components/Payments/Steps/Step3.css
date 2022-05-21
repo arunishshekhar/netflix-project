@@ -1,0 +1,16 @@
+.bg-checkmark{
+    background: url(/public/Images/Checkmark.png) no-repeat 50% 50%;
+    background-size: 60px;
+    height: 60px;
+
+}
+
+.checkmark-group--icon {
+    align-self: flex-start;
+    color: #e50914;
+    flex: none;
+    height: 26px;
+    width: 26px;
+   
+}
+

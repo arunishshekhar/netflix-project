@@ -1,0 +1,27 @@
+.trans-succ{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    height: 90vh;
+    font-size: 2rem;
+}
+
+.indicator{
+    clip-path: circle(50%);
+    height: 5em;
+    width: 5em;
+    border:10px solid red;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .indicator .checkmark-group--icon-payment{
+    
+    color: #e50914;
+    flex: none;
+    height: 100px;
+    width: 100px;
+;
+  }

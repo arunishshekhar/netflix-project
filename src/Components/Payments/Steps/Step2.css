@@ -1,0 +1,31 @@
+.input-field-err {
+  border: 1px solid red;
+  margin-bottom: 10px;
+}
+
+#input-email-signup,
+#input-password-signup {
+  border: none;
+  outline: none;
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+}
+.input-field-err:hover .input-signup-details {
+  padding-top: 0rem;
+}
+
+.input-field-err:hover .input-signup-details::placeholder {
+  opacity: 0;
+}
+
+.input-signup-details {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.error-msg {
+  color:red;
+}
