@@ -28,7 +28,7 @@ function Payments() {
       {step===1&&<Step2 nextStep={nextStep} getUserData={getUserData}/>}
       {step===2&&<Step3 nextStep={nextStep} />}
       {step===3&&<Step31 getUserData={getUserData} userCredentials={userCredentials}/>}
-        
+      {console.log(userCredentials)}
     </div>
   )
 }

@@ -1,6 +1,11 @@
 import React from "react";
+import { useUserAuth } from "../../Context/UserAuthContext";
+import { useCookies } from 'react-cookie';
 
-const PaymentButton = ({userCredentials}) => {
+const PaymentButton = ({ userCredentials }) => {
+  const { logIn, signUp } = useUserAuth();
+  const [cookie, setCookie] = useCookies(['cookie-name']);
+
   function isDate(val) {
     // Cross realm comptatible
     return Object.prototype.toString.call(val) === "[object Date]";
@@ -53,16 +58,31 @@ const PaymentButton = ({userCredentials}) => {
       .then((response) => response.json())
       .catch((err) => console.log(err));
   };
+
   const makePayment = () => {
-    getData({ amount: userCredentials.type==='premium'?499:199, email:userCredentials.email }).then((response) => {
+    getData({ amount: userCredentials.type === 'premium' ? 499 : 199, email: userCredentials.email }).then((response) => {
       var information = {
         action: "https://securegw-stage.paytm.in/order/process",
         params: response,
       };
-        post(information)
+      post(information)
     });
   };
-  return <button onClick={makePayment} className="step-btn step-btn-plan-select"> Pay Now</button>;
+
+  const registerUser = async (email, password, subscriptionType) => {
+
+    await signUp(email, password);
+    logIn(email, password);
+    setCookie('loggedUser', email);
+    setCookie(email, subscriptionType);
+  }
+
+  return <button onClick={
+    () => {
+      makePayment();
+      registerUser(userCredentials['email'], userCredentials['password'], userCredentials['subscriptionType']);
+    }
+  } className="step-btn step-btn-plan-select"> Pay Now</button>;
 };
 
 export default PaymentButton;

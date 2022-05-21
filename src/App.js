@@ -12,6 +12,7 @@ import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
 
 import AdminController from "./Components/admin-controller/admin-controller";
 import Payments from "./Components/Payments/Payments";
+// import PaymentStatus from "./Components/Payments/PaymentStatus";
 
 
 function App() {
@@ -53,6 +54,11 @@ function App() {
                 <HomePage />
               </ProtectedRoute>
             </Route>
+            {/* <Route exact path='/paymentStatus'>
+              <ProtectedRoute>
+                <PaymentStatus/>
+              </ProtectedRoute>
+            </Route> */}
           </Switch>
         </Router>
       </UserAuthContextProvider>
