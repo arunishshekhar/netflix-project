@@ -22,15 +22,6 @@
 
 }
 
-.step-desc{
-    
-}
-
-.bg-container{
-    /* display: inline-block; */
-   
-}
-
 .bg-container{
     background: url(/public/Images/Devices.png) no-repeat 50% 50%;
     height: 90px;
@@ -45,6 +36,7 @@
     padding: 1rem;
     font-size:1.5rem;
     font-weight: 500;
+    cursor: pointer;
 }
 
 

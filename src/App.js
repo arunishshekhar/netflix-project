@@ -6,14 +6,11 @@ import HomePage from "./Components/home-page/home-page";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import SignIn from "./Components/SignIn+Register/SignIn";
-import SignUp from "./Components/SignIn+Register/SignUp";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import IndivisualDetail from "./Components/indivsual-detail/indivisual-detail";
-
 import AdminController from "./Components/admin-controller/admin-controller";
 import Payments from "./Components/Payments/Payments";
-// import PaymentStatus from "./Components/Payments/PaymentStatus";
-
+import PaymentStatus from "./Components/Payments/PaymentStatus";
 
 function App() {
   const [cookie, setCookie] = useCookies(['cookie-name']);
@@ -35,10 +32,9 @@ function App() {
             </Route>
             <Route exact path="/login"> <SignIn /></Route>
             <Route exact path="/signUp">
-              {/* <SignUp /> */}
-              <Payments/>
-              </Route>
-            <Route exact path="/admin"><AdminController/></Route>
+              <Payments />
+            </Route>
+            <Route exact path="/admin"><AdminController /></Route>
             <Route exact path="/browse">
               <ProtectedRoute>
                 <HomePage />
@@ -54,11 +50,11 @@ function App() {
                 <HomePage />
               </ProtectedRoute>
             </Route>
-            {/* <Route exact path='/paymentStatus'>
+            <Route exact path='/paymentStatus'>
               <ProtectedRoute>
-                <PaymentStatus/>
+                <PaymentStatus />
               </ProtectedRoute>
-            </Route> */}
+            </Route>
           </Switch>
         </Router>
       </UserAuthContextProvider>

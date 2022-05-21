@@ -60,7 +60,7 @@ const PaymentButton = ({ userCredentials }) => {
   };
 
   const makePayment = () => {
-    getData({ amount: userCredentials.type === 'premium' ? 499 : 199, email: userCredentials.email }).then((response) => {
+    getData({ amount: userCredentials.subscriptionType == 'premium' ? 499 : 199, email: userCredentials.email }).then((response) => {
       var information = {
         action: "https://securegw-stage.paytm.in/order/process",
         params: response,
@@ -78,9 +78,9 @@ const PaymentButton = ({ userCredentials }) => {
   }
 
   return <button onClick={
-    () => {
+    async () => {
+      await registerUser(userCredentials['email'], userCredentials['password'], userCredentials['subscriptionType']);
       makePayment();
-      registerUser(userCredentials['email'], userCredentials['password'], userCredentials['subscriptionType']);
     }
   } className="step-btn step-btn-plan-select"> Pay Now</button>;
 };

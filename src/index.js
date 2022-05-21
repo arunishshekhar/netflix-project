@@ -15,8 +15,7 @@ const root = createRoot(container);
 
 root.render(
       <CookiesProvider>
-            {/* <App /> */}
-            <PaymentStatus/>
+            <App />
       </CookiesProvider>
 );
 
