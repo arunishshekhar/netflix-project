@@ -7,6 +7,7 @@ import HomePage from './Components/home-page/home-page';
 import Fallback from './Components/FallbackPage/Fallback';
 import Payments from './Components/Payments/Payments';
 import { CookiesProvider } from 'react-cookie';
+import PaymentStatus from './Components/Payments/PaymentStatus';
 
 
 const container = document.getElementById('root');
@@ -14,7 +15,8 @@ const root = createRoot(container);
 
 root.render(
       <CookiesProvider>
-            <App />
+            {/* <App /> */}
+            <PaymentStatus/>
       </CookiesProvider>
 );
 
