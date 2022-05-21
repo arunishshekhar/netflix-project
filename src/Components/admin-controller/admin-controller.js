@@ -2,7 +2,7 @@ import React from "react";
 import 'regenerator-runtime/runtime'
 import { db } from "../../firebase";
 import { set, ref } from "firebase/database";
-
+import './admin-controller.css'
 const { BlobServiceClient } = require('@azure/storage-blob');
 
 
@@ -20,18 +20,18 @@ function onUploadHandler() {
     const containerClient = blobServiceClient.getContainerClient(containerName);
 
 
-/* //Write
-set(ref(db,'tarun'),{
-    name: 'kumar',
-    age: '200',
-  })
-  
-  //Read
-  const temp = ref(db,'tarun');
-  onValue(temp, (snap) => {
-    console.log(snap.val());
-  })
- */
+    /* //Write
+    set(ref(db,'tarun'),{
+        name: 'kumar',
+        age: '200',
+      })
+      
+      //Read
+      const temp = ref(db,'tarun');
+      onValue(temp, (snap) => {
+        console.log(snap.val());
+      })
+     */
 
 
     const uploadFiles = async () => {
@@ -46,11 +46,11 @@ set(ref(db,'tarun'),{
             }
             await Promise.all(promises);
             alert('Done.');
-            
-            set(ref(db,`${data.value}`),{
+
+            set(ref(db, `${data.value}`), {
                 url: `https://mb0netflix.blob.core.windows.net/movies/${fileName}`,
-              })
-              .then(val => console.log(val))
+            })
+                .then(val => console.log(val))
             fileInput.remove();
             upload.remove();
         }
@@ -66,19 +66,28 @@ set(ref(db,'tarun'),{
 function AdminController() {
 
     return (
-        <>
-            <h1>This is Admin</h1>
-            <h2>File to Upload</h2>
-            <br/>
-            <br/>
-            <br/>
-            <input type='text' id="ref-no"  placeholder="Reference Number" required/>
-            <br/>
-            <br/>
-            <br/>
-            <input type="file" id="file-input" required/>
-            <button id="upload" onClick={() => onUploadHandler()} style={{cursor:"pointer", padding : "1rem", borderRadius:"2rem"}}>Upload</button>
-        </>
+        <div className="adminPanel">
+            <br />
+            <br />
+            <h1 className="title">Admin Panel</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="panel">
+                <h1>Upload File</h1>
+                <br />
+                <br />
+         
+                <input className="input-field" type='text' id="ref-no" placeholder="Reference Number" required />
+                <br />
+                <br />
+                <input className="input-field" type="file" id="file-input" required />
+                <br/>
+                <button id="upload" className="step-btn" onClick={() => onUploadHandler()} style={{ cursor: "pointer", padding: "1rem", borderRadius: "0.4rem" }}>Upload</button>
+            </div>
+        </div>
     )
 }
 
