@@ -11,10 +11,6 @@ button {
 
 }
 .logo {
-  /* position:fixed;
-left:0;
-object-fit: contain;
-padding-left: 20px; */
   width: 150px;
 }
 
@@ -25,14 +21,10 @@ padding-left: 20px; */
   max-width: 45rem;
 }
 .main-body-title {
-  /* font-size: 3rem; */
   padding: 1rem;
 }
 
 .login-sigin-btn {
-  /* position: fixed; */
-  /*right: 20px;
-    top: 20px; */
   background-color: #e50914;
   line-height: normal;
   padding: 7px 17px;
@@ -107,12 +99,16 @@ padding-left: 20px; */
 }
 
 .submit-email-btn {
-
   font-size:1.5rem;
   background: #e50914;
   color: #fff;
-  padding: 1.1rem;
+  padding: 1.1rem 4rem;
   font-weight:700;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.submit-email-btn:hover{
+  background: #ad030b;
 }
 
 .input-field-err:hover label {

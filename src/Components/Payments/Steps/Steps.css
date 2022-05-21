@@ -21,6 +21,9 @@
     padding:10px;
 
 }
+.step-desc{
+    font-size: larger;
+}
 
 .bg-container{
     background: url(/public/Images/Devices.png) no-repeat 50% 50%;

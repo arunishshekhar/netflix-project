@@ -29,7 +29,9 @@ function HeaderPage() {
   return (
     <div className="loginPage">
       <div className="loginPage_bg">
-        <img className="logo" src="/Images/logo.svg" alt="logo" />
+        <Link to='/'>
+          <img id="logo" src="/Images/logo.svg" alt="logo" />
+        </Link>
         <Link to="/login">
           <button className="login-sigin-btn">Sign In</button>
         </Link>
@@ -46,23 +48,6 @@ function HeaderPage() {
               membership.
             </p>
             <div className="form-input-submit">
-              {/* <div className="input-field-err">
-                <ul className="input-column">
-                  <li>
-                    {" "}
-                    <label htmlFor="input-email">Email address</label>
-                  </li>
-                  <li className="email-box">
-                    <input
-                      type="email"
-                      id="input-email"
-                      value={mailInput}
-                      placeholder="Email address "
-                      onChange={handleInputChange}
-                    />
-                  </li>
-                </ul>
-              </div> */}
               <Link to="/signup">
                 {" "}
                 <button
