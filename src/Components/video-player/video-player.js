@@ -4,31 +4,32 @@ import { useParams } from 'react-router-dom';
 import "./video-player.css"
 import FallbackVideo from './fall-back';
 import { db } from "../../firebase"
-import { ref, onValue } from "firebase/database";
+import { ref, onValue, set } from "firebase/database";
 
-function VideoPlayer(props) {
+function VideoPlayer() {
   const { id } = useParams();
-  
+
   const [url, setUrl] = useState(null)
-  
+
   useEffect(() => {
-    const temp = ref(db,`${id}`);
+    const temp = ref(db, `${id}`);
+    setUrl(null);
     onValue(temp, (snap) => {
-      if (!(url ===snap.val()["url"])) {
+      if (snap.val()["url"]) {
         setUrl(snap.val()["url"])
       }
     });
   });
-  
+
   return (
-      (url) 
+    (url)
       ?
       <div className='video-player-wrapper'>
         <ReactPlayer className={'video-contain'} playing width={"100%"} height={"100%"} controls url={url} />
       </div>
-      : 
-      <FallbackVideo />        
-      )
+      :
+      <FallbackVideo />
+  )
 }
 
 export default VideoPlayer;
