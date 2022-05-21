@@ -72,12 +72,12 @@ function AdminController() {
             <br/>
             <br/>
             <br/>
-            <input type='text' id="ref-no" />
+            <input type='text' id="ref-no"  placeholder="Reference Number"/>
             <br/>
             <br/>
             <br/>
             <input type="file" id="file-input"/>
-            <button id="upload" onClick={() => onUploadHandler()}>Upload</button>
+            <button id="upload" onClick={() => onUploadHandler()} style={{cursor:"pointer", padding : "1rem", borderRadius:"2rem"}}>Upload</button>
         </>
     )
 }

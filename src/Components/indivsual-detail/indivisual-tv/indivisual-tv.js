@@ -5,6 +5,8 @@ import ArrayOfContent from "../../home-page/main-content/content-list/components
 import Spinner2 from "../../Spinner/Spinner2";
 import VideoPlayer from '../../video-player/video-player'
 import NavBar from "../../home-page/nav-bar/nav-bar";
+import { useCookies } from "react-cookie";
+
 /* 
 {
     "adult": false,
@@ -302,7 +304,7 @@ import NavBar from "../../home-page/nav-bar/nav-bar";
 
 function IndivisualTV() {
     const { id } = useParams();
-
+    const [cookie] = useCookies(['cookie-name']);
     const [TVDetail, setTVDetail] = useState({})
     const [similarTV, setSimilarTV] = useState({})
     const [recommendedTV, setRecommendedTV] = useState({})
@@ -325,12 +327,24 @@ function IndivisualTV() {
     return (
         <div className="individual-detail-main">
             <NavBar />
-            <VideoPlayer />
+            {
+                (cookie[cookie['loggedUser']] == 'premium')
+                    ?
+                    <VideoPlayer />
+                    :
+                    <>
+                        <br />
+                        <br />
+                        <h1>Please upgrade your Membership in order to watch TV Shows and Web Series</h1>
+                        <br />
+                        <br />
+                    </>
+            }
             <br />
             <div className="video-details">
                 <p className='video-property'>Title:</p>&nbsp;&nbsp;{TVDetail.name ? TVDetail.name : TVDetail.original_name}<br />
-                <p className = 'video-property'>Rating:</p>&nbsp;&nbsp;{TVDetail.vote_average?TVDetail.vote_average:'Not Known'}<br/>
-                <p className = 'video-property'>Release Date:</p>&nbsp;&nbsp;{TVDetail.first_air_date?TVDetail.first_air_date:'Not Known'}<br/><br/>
+                <p className='video-property'>Rating:</p>&nbsp;&nbsp;{TVDetail.vote_average ? TVDetail.vote_average : 'Not Known'}<br />
+                <p className='video-property'>Release Date:</p>&nbsp;&nbsp;{TVDetail.first_air_date ? TVDetail.first_air_date : 'Not Known'}<br /><br />
                 <p className="video-property-description">"{TVDetail.overview ? TVDetail.overview : TVDetail.tagline}"</p>
                 {console.log(TVDetail)}
             </div>

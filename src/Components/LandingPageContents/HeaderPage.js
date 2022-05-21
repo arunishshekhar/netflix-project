@@ -46,7 +46,7 @@ function HeaderPage() {
               membership.
             </p>
             <div className="form-input-submit">
-              <div className="input-field-err">
+              {/* <div className="input-field-err">
                 <ul className="input-column">
                   <li>
                     {" "}
@@ -62,13 +62,13 @@ function HeaderPage() {
                     />
                   </li>
                 </ul>
-              </div>
+              </div> */}
               <Link to="/signup">
                 {" "}
                 <button
                   className="submit-email-btn"
                 // onClick={validateEmail}
-                >{`Get Started  >`}</button>
+                >{`Get Started `}</button>
               </Link>
             </div>
             {/* {(isMailValid)&&<h5 className="input-err">{"Email is invalid"}</h5>} */}
